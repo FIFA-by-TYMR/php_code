@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: Danma
- * Date: 3/20/2017
- * Time: 1:35 PM
- */
 class ConnectToDatabase1
 {
 
