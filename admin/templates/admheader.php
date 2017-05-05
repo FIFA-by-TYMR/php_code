@@ -1,14 +1,12 @@
-<?php
-session_start();
-?>
+<!--This header is just a suggestion. Do whatever you want with it!-->
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Project Fifa</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -28,15 +26,16 @@ session_start();
             </button>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li><a href="index.php" class="navigate">Home</a></li>
-                <li><a href="playoff.php">Play Off</a></li>
-                <li><a href="match.php">Wedstrijden</a></li>
-                <li><a href="result.php">Resultaten</a></li>
+            <ul class="navigate nav navbar-nav text-center">
+                <li><a href="addteam.php">Team Toevoegen</a></li>
+                <li><a href="addresult.php">Resultaat Toevoegen</a></li>
+                <li><a href="export.php">Exporteren</a></li>
             </ul>
-            <ul class="nav navbar-nav login">
-                <li><a href="login.php" class="pull-right">LogIn</a></li>
-            </ul>
+            <div class="navigate collapse nav navbar-collapse pull-right" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="../public/index.php">Logout</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </nav>
