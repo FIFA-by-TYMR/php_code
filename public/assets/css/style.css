@@ -1,9 +1,10 @@
 body{
-    background-color: #007fff;
+    background-color: #3f9fff;
 }
 
 .navbar-inverse{
     background-color: #ff3f19;
+    border-bottom: solid 1px black;
 }
 
 .navbar-inverse .navbar-nav>li>a{
