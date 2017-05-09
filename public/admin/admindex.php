@@ -1,4 +1,4 @@
-<?php require 'templates/admheader.php'?>
+<?php require '../templates/admheader.php'?>
 
     <div class="main-content">
 
@@ -7,4 +7,4 @@
 
     </div>
 
-<?php require 'templates/footer.php';
+<?php require '../templates/footer.php';
