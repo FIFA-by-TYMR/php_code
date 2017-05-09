@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($validate->validate($email, $pass) == true)
     {
-        $stmt = $db_conn->prepare("SELECT * FROM users WHERE email = :email");
+        $stmt = $db_conn->prepare("SELECT * FROM tbl_users WHERE email = :email");
         $stmt->execute(array("email" => $email));
         $userAll = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -26,7 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             {
                 $_SESSION['email'] = $email;
                 $_SESSION['logedIn'] = "Je bent ingelogd als: " . $email;
-                header("location: ../admin/admindex.php");
+                header("location: ../public/admin/admindex.php");
+                exit;
             }
             else
             {
@@ -39,5 +40,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $_SESSION['error'] = "Je hebt ongeldige email ingetoets";
     }
-}
     header("location: ../public/login.php");
+}

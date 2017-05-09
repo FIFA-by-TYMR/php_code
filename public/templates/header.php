@@ -14,7 +14,7 @@ session_start();
 </head>
 <body>
 <header>
-
+    <!-- LOGO -->
 </header>
 
 <nav class="navbar-inverse">
