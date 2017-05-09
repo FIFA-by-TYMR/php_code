@@ -27,13 +27,13 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="navigate nav navbar-nav text-center">
-                <li><a href="addteam.php">Team Toevoegen</a></li>
-                <li><a href="addresult.php">Resultaat Toevoegen</a></li>
-                <li><a href="export.php">Exporteren</a></li>
+                <li><a href="../admin/addteam.php">Team Toevoegen</a></li>
+                <li><a href="../admin/addresult.php">Resultaat Toevoegen</a></li>
+                <li><a href="../admin/export.php">Exporteren</a></li>
             </ul>
             <div class="navigate collapse nav navbar-collapse pull-right" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li><a href="../public/index.php">Logout</a></li>
+                    <li><a href="../index.php">Logout</a></li>
                 </ul>
             </div>
         </div>
