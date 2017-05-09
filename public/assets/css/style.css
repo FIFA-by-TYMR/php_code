@@ -1,5 +1,7 @@
 body{
-    background-color: #3f9fff;
+    /*Image get from: http://wallpaper-gallery.net/wallpapers/hd-football-wallpapers.html*/
+    background-image: url("../img/bg1.jpg");
+    background-size: cover;
 }
 
 .navbar-inverse{
