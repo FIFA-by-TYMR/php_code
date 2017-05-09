@@ -24,3 +24,16 @@ body{
         text-align: center
     }
 }
+header img{
+    width: 100px;
+    height: 100px;
+}
+.index_IMG{
+    margin-top:1.9em;
+}
+.index_Beschrijving{
+    padding-top: 1.9em;
+}.footer{
+    color: #000000;
+    font-weight: bold;
+ }
