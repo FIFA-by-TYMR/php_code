@@ -13,7 +13,11 @@
 </head>
 <body>
 <header>
-
+    <div class="container">
+        <div class="logo">
+            <a href="index.php"> <img src="./assets/img/logo.png" class="img-responsive center-block"> </a>
+        </div>
+    </div>
 </header>
 
 <nav class="navbar-inverse">
@@ -33,7 +37,7 @@
             </ul>
             <div class="navigate collapse nav navbar-collapse pull-right" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li><a href="../../app/login.php">Logout</a></li>
+                    <li><a href="../index.php">Logout</a></li>
                 </ul>
             </div>
         </div>
