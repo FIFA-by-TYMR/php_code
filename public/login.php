@@ -2,6 +2,7 @@
 
     <div class="container">
         <?php
+        session_start();
         if(isset($_SESSION['error']))
         {
             echo '<div class="error text-center alert-danger">' . $_SESSION['error'] . '</div>';
@@ -11,12 +12,7 @@
         {
             echo "<div class='logedin text-center alert-success'>" . $_SESSION['logedIn'] . "</div>";
         }
-        if(isset($_SESSION['regmessage']))
-        {
-            echo '<div class="error text-center alert-danger">' . $_SESSION['regmessage'] . '</div>';
-            unset($_SESSION['regmessage']);
-        }
-        if(!isset($_SESSION['regmessage']))
+        if(!isset($_SESSION['logedIn']))
         {
             echo '';
         }
