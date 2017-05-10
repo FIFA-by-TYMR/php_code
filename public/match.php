@@ -2,7 +2,9 @@
 
     <div class="main-content">
 
-        <!-- site's main content goes here -->
+        <div class="container">
+            <?php require "../app/match_display.php"; ?>
+        </div>
 
 
     </div>
