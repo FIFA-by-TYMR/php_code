@@ -1,10 +1,5 @@
-<?php require '../templates/admheader.php'?>
+<?php
 
-    <div class="main-content">
+echo "<li> </li>"
 
-        <!-- site's main content goes here -->
-
-
-    </div>
-
-<?php require '../templates/footer.php';
+?>

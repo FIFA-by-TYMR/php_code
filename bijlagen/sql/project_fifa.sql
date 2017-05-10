@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.6.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 13 apr 2017 om 11:24
--- Serverversie: 10.1.21-MariaDB
--- PHP-versie: 5.6.30
+-- Generation Time: May 10, 2017 at 11:06 AM
+-- Server version: 5.7.14
+-- PHP Version: 5.6.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,13 +19,11 @@ SET time_zone = "+00:00";
 --
 -- Database: `project_fifa`
 --
-CREATE DATABASE IF NOT EXISTS `project_fifa` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `project_fifa`;
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `tbl_matches`
+-- Table structure for table `tbl_matches`
 --
 
 CREATE TABLE `tbl_matches` (
@@ -38,7 +36,7 @@ CREATE TABLE `tbl_matches` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 --
--- Gegevens worden geëxporteerd voor tabel `tbl_matches`
+-- Dumping data for table `tbl_matches`
 --
 
 INSERT INTO `tbl_matches` (`id`, `team_id_a`, `team_id_b`, `score_team_a`, `score_team_b`, `start_time`) VALUES
@@ -48,7 +46,7 @@ INSERT INTO `tbl_matches` (`id`, `team_id_a`, `team_id_b`, `score_team_a`, `scor
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `tbl_players`
+-- Table structure for table `tbl_players`
 --
 
 CREATE TABLE `tbl_players` (
@@ -62,7 +60,7 @@ CREATE TABLE `tbl_players` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Gegevens worden geëxporteerd voor tabel `tbl_players`
+-- Dumping data for table `tbl_players`
 --
 
 INSERT INTO `tbl_players` (`id`, `student_id`, `team_id`, `first_name`, `last_name`, `created_at`, `deleted_at`) VALUES
@@ -73,12 +71,27 @@ INSERT INTO `tbl_players` (`id`, `student_id`, `team_id`, `first_name`, `last_na
 (5, 'd74745', 2, 'Luuk', 'de Jong', '2017-04-13 09:48:23', NULL),
 (6, 'd987665', 2, 'Siem', 'de Jong', '2017-04-13 09:48:23', NULL),
 (7, 'd11555', 2, 'Jeroen', 'Zoet', '2017-04-13 09:48:23', NULL),
-(8, 'd544566', 2, 'Hector', 'Moreno', '2017-04-13 09:48:23', NULL);
+(8, 'd544566', 2, 'Hector', 'Moreno', '2017-04-13 09:48:23', NULL),
+(24, 'Tomasz', 1, 'Tomasz', 'Tomasz', '2017-05-09 16:32:20', NULL),
+(25, 'Tomasz', 1, 'Tomasz', 'Tomasz', '2017-05-09 16:32:20', NULL),
+(26, 'Tomasz', 1, 'Tomasz', 'Tomasz', '2017-05-09 16:32:20', NULL),
+(27, 'Tomasz', 1, 'Tomasz', 'Tomasz', '2017-05-09 16:32:20', NULL),
+(28, 'Tomasz', 1, 'Tomasz', 'Tomasz', '2017-05-09 16:32:20', NULL),
+(29, 'dwadwa', 1, 'dawdaw', 'dawd', '2017-05-09 16:32:55', NULL),
+(30, 'wadwadwa', 1, 'dawd', 'wadaw', '2017-05-09 16:32:55', NULL),
+(31, 'awdaw', 1, 'dawd', 'dwadaw', '2017-05-09 16:32:55', NULL),
+(32, 'dawd', 1, 'awdaw', 'daw', '2017-05-09 16:32:55', NULL),
+(33, 'wadwad', 1, 'dawdwad', 'daw', '2017-05-09 16:32:55', NULL),
+(34, 'Tomasztttt', 39, 'Tomasztttt', 'Tomasztttt', '2017-05-09 16:45:25', NULL),
+(35, '', 39, '', '', '2017-05-09 16:45:25', NULL),
+(36, '', 39, '', '', '2017-05-09 16:45:25', NULL),
+(37, '', 39, '', '', '2017-05-09 16:45:25', NULL),
+(38, '', 39, '', '', '2017-05-09 16:45:25', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `tbl_poules`
+-- Table structure for table `tbl_poules`
 --
 
 CREATE TABLE `tbl_poules` (
@@ -91,7 +104,7 @@ CREATE TABLE `tbl_poules` (
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `tbl_teams`
+-- Table structure for table `tbl_teams`
 --
 
 CREATE TABLE `tbl_teams` (
@@ -103,19 +116,51 @@ CREATE TABLE `tbl_teams` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Gegevens worden geëxporteerd voor tabel `tbl_teams`
+-- Dumping data for table `tbl_teams`
 --
 
 INSERT INTO `tbl_teams` (`id`, `poule_id`, `name`, `created_at`, `deleted_at`) VALUES
 (1, 1, 'Ajax', '2017-04-13 09:42:45', NULL),
-(2, 1, 'PSV', '2017-04-13 09:42:45', NULL);
+(2, 1, 'PSV', '2017-04-13 09:42:45', NULL),
+(23, 1, 'Tomasz', '2017-05-09 16:32:20', NULL),
+(24, 1, 'Tomaszs', '2017-05-09 16:32:55', NULL),
+(25, 1, 'dwadwad', '2017-05-09 16:34:35', NULL),
+(27, 1, 'dawdwadwadwadawd', '2017-05-09 16:35:00', NULL),
+(29, 1, 'dawdawdaw', '2017-05-09 16:36:14', NULL),
+(31, 1, 'Tomaszawdwa', '2017-05-09 16:38:01', NULL),
+(32, 1, 'Tomaszawdwadwa', '2017-05-09 16:39:12', NULL),
+(34, 1, 'dawdawdawd', '2017-05-09 16:39:48', NULL),
+(35, 1, 'dwadwadwadwadawdwa', '2017-05-09 16:40:16', NULL),
+(36, 1, 'TomaszT', '2017-05-09 16:40:50', NULL),
+(37, 1, 'Tomasztt', '2017-05-09 16:44:04', NULL),
+(39, 1, 'Tomasztttt', '2017-05-09 16:45:25', NULL);
+
+-- --------------------------------------------------------
 
 --
--- Indexen voor geëxporteerde tabellen
+-- Table structure for table `tbl_users`
+--
+
+CREATE TABLE `tbl_users` (
+  `id` int(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `pass` varchar(255) NOT NULL,
+  `admin` int(2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_users`
+--
+
+INSERT INTO `tbl_users` (`id`, `email`, `pass`, `admin`) VALUES
+(1, 'admin@admin.com', '$2y$10$p4R9ZIIE5QtnzMTbpkbhM.ashfncHmAM9yGfTl.NpOUXgsBeTs1iS', NULL);
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Indexen voor tabel `tbl_matches`
+-- Indexes for table `tbl_matches`
 --
 ALTER TABLE `tbl_matches`
   ADD PRIMARY KEY (`id`),
@@ -123,63 +168,75 @@ ALTER TABLE `tbl_matches`
   ADD KEY `tbl_matches_ibfk_2` (`team_id_b`);
 
 --
--- Indexen voor tabel `tbl_players`
+-- Indexes for table `tbl_players`
 --
 ALTER TABLE `tbl_players`
   ADD PRIMARY KEY (`id`),
   ADD KEY `team_id` (`team_id`);
 
 --
--- Indexen voor tabel `tbl_poules`
+-- Indexes for table `tbl_poules`
 --
 ALTER TABLE `tbl_poules`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `naam` (`naam`);
 
 --
--- Indexen voor tabel `tbl_teams`
+-- Indexes for table `tbl_teams`
 --
 ALTER TABLE `tbl_teams`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `name` (`name`);
 
 --
--- AUTO_INCREMENT voor geëxporteerde tabellen
+-- Indexes for table `tbl_users`
+--
+ALTER TABLE `tbl_users`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `email` (`email`);
+
+--
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT voor een tabel `tbl_matches`
+-- AUTO_INCREMENT for table `tbl_matches`
 --
 ALTER TABLE `tbl_matches`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT voor een tabel `tbl_players`
+-- AUTO_INCREMENT for table `tbl_players`
 --
 ALTER TABLE `tbl_players`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 --
--- AUTO_INCREMENT voor een tabel `tbl_poules`
+-- AUTO_INCREMENT for table `tbl_poules`
 --
 ALTER TABLE `tbl_poules`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT voor een tabel `tbl_teams`
+-- AUTO_INCREMENT for table `tbl_teams`
 --
 ALTER TABLE `tbl_teams`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 --
--- Beperkingen voor geëxporteerde tabellen
+-- AUTO_INCREMENT for table `tbl_users`
+--
+ALTER TABLE `tbl_users`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- Constraints for dumped tables
 --
 
 --
--- Beperkingen voor tabel `tbl_matches`
+-- Constraints for table `tbl_matches`
 --
 ALTER TABLE `tbl_matches`
   ADD CONSTRAINT `tbl_matches_ibfk_1` FOREIGN KEY (`team_id_a`) REFERENCES `tbl_teams` (`id`),
   ADD CONSTRAINT `tbl_matches_ibfk_2` FOREIGN KEY (`team_id_b`) REFERENCES `tbl_teams` (`id`);
 
 --
--- Beperkingen voor tabel `tbl_players`
+-- Constraints for table `tbl_players`
 --
 ALTER TABLE `tbl_players`
   ADD CONSTRAINT `tbl_players_ibfk_1` FOREIGN KEY (`team_id`) REFERENCES `tbl_teams` (`id`) ON UPDATE CASCADE;

@@ -70,6 +70,7 @@
 
             <div class="col-md-4">
                 <h3 class="text-center">Team Lijst</h3>
+
             </div>
         </div>
 
