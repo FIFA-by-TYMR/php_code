@@ -1,5 +1,8 @@
-<?php
+<?php require '../templates/admheader.php'?>
 
-echo "<li> </li>"
+    <div class="main-content">
 
-?>
+    </div>
+
+
+<?php require '../templates/footer.php';
