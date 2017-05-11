@@ -13,7 +13,18 @@ else
     <div class="main-content">
 
         <div class="container">
-            <?php require "../app/match_display.php"; ?>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="text-center">Team A</th>
+                        <th class="text-center">Tijd</th>
+                        <th class="text-center">Team B</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php require "../app/match_display.php"; ?>
+                </tbody>
+            </table>
         </div>
 
 

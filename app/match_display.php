@@ -4,24 +4,27 @@ require_once "connection.php";
 
 $stmt = $db_conn->prepare("SELECT * FROM tbl_matches");
 $stmt->execute();
-$rezult = $stmt->fetchAll();
+$match_row = $stmt->rowCount();
 
-$stmt = $db_conn->prepare("SELECT `name` FROM tbl_teams WHERE id IN (SELECT `team_id_a` FROM tbl_matches) AND id IN (SELECT `team_id_b` FROM tbl_matches)");
+$stmt = $db_conn->prepare("SELECT team_a.name as `team_a`, team_b.`name` as `team_b` 
+FROM `tbl_matches` m 
+LEFT JOIN `tbl_teams` team_a ON (team_a.id = m.team_id_a)
+LEFT JOIN `tbl_teams` team_b ON (team_b.id = m.team_id_b)
+");
 $stmt->execute();
-$team_id = $stmt->fetchAll();
+$matches = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+$tijd = 25;
+$matches_amount = count($matches);
 
-var_dump($team_id);
-die();
+    foreach ($matches as $match)
+        {
+            echo
+                "<tr>
+                    <th class=\"text-center\">" . $match['team_a'] ."</th>
+                    <th class=\"text-center\">". $tijd."</th>
+                    <th class=\"text-center\">" . $match['team_b'] ."</th>
+                 </tr>";
 
-
-foreach ($rezult as $rez)
-{
-
-    foreach ($team_id as $id)
-    {
-
-    }
-}
-
+        }
 
