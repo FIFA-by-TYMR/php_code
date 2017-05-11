@@ -1,4 +1,3 @@
-<!--This header is just a suggestion. Do whatever you want with it!-->
 <!doctype html>
 <html lang="en">
 <head>
