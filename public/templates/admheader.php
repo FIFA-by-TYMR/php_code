@@ -30,6 +30,7 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="navigate nav navbar-nav text-center">
+                <li><a href="../admin/admindex.php">Home</a></li>
                 <li><a href="../admin/addteam.php">Team Toevoegen</a></li>
                 <li><a href="../admin/addresult.php">Resultaat Toevoegen</a></li>
                 <li><a href="../admin/export.php">Exporteren</a></li>
