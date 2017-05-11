@@ -22,6 +22,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($stmt->rowCount() == 0) {
 
             $arr_bool = array();
+            $db_conn->beginTransaction();
+            try {
+                foreach($something as $some)
+                {
+                    // insert into database
+                }
+                $db_conn->commit();
+            } catch(PDOException $e)
+            {
+                echo $e->getMessage();
+                $db_conn->rollBack();
+            }
+
             foreach ($_POST['p'] as $player) {
                 if ($validate->validateplayer($player)) {
                     array_push($arr_bool, true);
