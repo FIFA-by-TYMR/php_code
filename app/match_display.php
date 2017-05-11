@@ -14,8 +14,15 @@ LEFT JOIN `tbl_teams` team_b ON (team_b.id = m.team_id_b)
 $stmt->execute();
 $matches = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$tijd = 25;
-$matches_amount = count($matches);
+
+// Set date of the tournament:
+$date = new DateTime('2017-06-30');
+
+//Set time when the matches need to begin:
+$date->setTime(8, 00);
+
+//Set the display mode now is(Hour - Min)
+$tijd = $date->format('H:i');
 
     foreach ($matches as $match)
         {
@@ -26,5 +33,10 @@ $matches_amount = count($matches);
                     <th class=\"text-center\">" . $match['team_b'] ."</th>
                  </tr>";
 
+            //Change duration of a match
+            $date->modify('+25 minutes');
+
+            //Set the display mode now is(Hour - Min)
+            $tijd = $date->format('H:i');
         }
 
