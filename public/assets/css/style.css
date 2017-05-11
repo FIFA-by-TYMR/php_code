@@ -33,6 +33,10 @@ header img{
 }
 .index_Beschrijving{
     padding-top: 1.9em;
+    color: #f6f6f6;
+    font-weight: bolder;
+    text-shadow: 2px 2px #000000;
+}
 }.footer{
     color: #000000;
     font-weight: bold;
@@ -40,9 +44,10 @@ header img{
  .col-md-4{
      color: #f6f6f6;
      font-weight: bold;
+     text-shadow: 2px 2px #000000;
  }
  .control-label{
      color: #f6f6f6;
      font-weight: bold;
-
+     text-shadow: 2px 2px #000000;
  }
