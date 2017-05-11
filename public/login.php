@@ -1,8 +1,17 @@
-<?php require(realpath(__DIR__) . '/templates/header.php'); ?>
+<?php
+    session_start();
+    if (isset($_SESSION['logedIn']))
+    {
+        header("location: ../public/admin/admindex.php");
+    }
+    else
+    {
+        require(realpath(__DIR__) . '/templates/header.php');
+    }
+?>
 
     <div class="container">
         <?php
-        session_start();
         if(isset($_SESSION['error']))
         {
             echo '<div class="error text-center alert-danger">' . $_SESSION['error'] . '</div>';
