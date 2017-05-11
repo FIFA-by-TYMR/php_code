@@ -7,6 +7,8 @@ body{
 .navbar-inverse{
     background-color: #ff3f19;
     border-bottom: solid 1px black;
+    color: #000000;
+    font-weight: bold;
 }
 
 .navbar-inverse .navbar-nav>li>a{
