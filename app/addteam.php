@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 {
                     $stmt = $db_conn->prepare("INSERT INTO tbl_players (student_id, team_id, first_name, last_name) VALUES (:student_id, :team_id, :first_name, :last_name)");
                     $stmt->execute(array("student_id" => $player[0], "team_id" => $teamname[0], "first_name" => $player[1], "last_name" => $player[2]));
-                    $_SESSION['error'] = "Team Toegevoegd";
+                    $_SESSION['success'] = "Team Toegevoegd";
                 }
             }
         }
