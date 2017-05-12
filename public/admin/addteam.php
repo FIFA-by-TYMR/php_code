@@ -18,7 +18,7 @@
                 }
                 ?>
             </div>
-        </div>w
+        </div>
 
         <div class="container">
             <form action="../../app/addteam.php" method="post" class="form-horizontal col-md-8">
