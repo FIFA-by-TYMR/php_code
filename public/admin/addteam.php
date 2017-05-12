@@ -3,27 +3,21 @@
     <div class="main-content">
 
         <div class="container">
-            <?php
-            session_start();
-            if(isset($_SESSION['error']))
-            {
-                echo '<div class="error text-center alert-danger">' . $_SESSION['error'] . '</div>';
-                unset($_SESSION['error']);
-            }
-            if(isset($_SESSION['logedIn']))
-            {
-                echo "<div class='logedin text-center alert-success'>" . $_SESSION['logedIn'] . "</div>";
-            }
-            if(isset($_SESSION['regmessage']))
-            {
-                echo '<div class="error text-center alert-danger">' . $_SESSION['regmessage'] . '</div>';
-                unset($_SESSION['regmessage']);
-            }
-            if(!isset($_SESSION['regmessage']))
-            {
-                echo '';
-            }
-            ?>
+            <div class="col-md-8">
+                <?php
+                session_start();
+                if(isset($_SESSION['error']))
+                {
+                    echo '<div class="text-center alert-danger">' . $_SESSION['error'] . '</div>';
+                    unset($_SESSION['error']);
+                }
+                if(isset($_SESSION['success']))
+                {
+                    echo '<div class="text-center alert-success">' . $_SESSION['success'] . '</div>';
+                    unset($_SESSION['success']);
+                }
+                ?>
+            </div>
         </div>
 
         <div class="container">

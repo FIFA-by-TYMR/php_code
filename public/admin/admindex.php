@@ -16,7 +16,7 @@
                     <input type="number" id="second" name="second" placeholder="30" class="form-control">
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Inloggen" class="form-control btn btn-primary">
+                    <input type="submit" value="Tijd veranderen" class="form-control btn btn-primary">
                 </div>
 
             </form>
