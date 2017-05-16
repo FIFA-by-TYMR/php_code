@@ -1,0 +1,3 @@
+id,team_id_a,team_id_b,score_team_a,score_team_b,match_duration,
+1,1,2,2,4,0
+2,2,1,NULL,NULL,0

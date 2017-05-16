@@ -44,7 +44,8 @@ class exportC
          $this->dbHandle->Query($this->query1);
          $file = file("csvFiles/$this->fileDirectory.csv");
          $file1 = file("csvFiles/$this->fileDirectory.1.csv");
-         file_put_contents("csvFiles/$this->fileDirectory.csv", $file1 . PHP_EOL ,FILE_APPEND  );
+            file_put_contents("csvFiles/$this->fileDirectory.csv", PHP_EOL ,FILE_APPEND  );
+         file_put_contents("csvFiles/$this->fileDirectory.csv", $file1 ,FILE_APPEND  );
         }
 
 }
