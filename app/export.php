@@ -6,7 +6,9 @@
  * Time: 3:22 PM
  */
 require "connectToDatabase1.php";
+require "exportC.php";
 $con = new ConnectToDatabase1("root","","localhost","project_fifa");
+
 //<editor-fold desc="handeling of variables">
 if (isset($_POST['match']) ){
     $matchBool = $_POST['match'];
@@ -78,51 +80,8 @@ else{
 //</editor-fold>
 
 if ($matchBool && $playersBool && $teamsBool && $usersBool){
-    $query = "    SELECT `COLUMN_NAME`
-FROM `INFORMATION_SCHEMA`.`COLUMNS`
-WHERE `TABLE_NAME`='tbl_matches'
-INTO OUTFILE '../../../../www/php_code/app/csvFiles/1matches.csv'
-    FIELDS TERMINATED BY ','
-    ENCLOSED BY ''
-    LINES TERMINATED BY ','";
-    $matchQuery =   "
-
-
-SELECT * FROM Tbl_matches
-    INTO OUTFILE '../../../../www/php_code/app/csvFiles/Matches.csv'
-    FIELDS ESCAPED BY ''
-    TERMINATED BY ','
-    ENCLOSED BY ''
-    LINES TERMINATED BY '\r\n';";
-//$matchQuery = "
-//select 'id','team_id_a','team_id_b','score_team_a','score_team_b','match_duration' UNION ALL
-//SELECT id,team_id_a,team_id_b,score_team_a,score_team_b,match_duration FROM Tbl_matches;
-//INTO OUTFILE '../../../../www/php_code/app/csvFiles/Matches.csv'
-//";
-//
-//    $testquery= "SELECT `COLUMN_NAME`
-//FROM `INFORMATION_SCHEMA`.`COLUMNS`
-//WHERE `TABLE_NAME`='tbl_matches';";
-//    $matchQuery =
-   $playersQuery = "SELECT * FROM tbl_players
-INTO  ../../../www/php_code/app/csvFiles/players.csv ;";
-
-   $teamsQuery =  "SELECT * FROM tbl_teams
-OUTPUT TO ../../../../www/php_code/app/csvFiles/teams.csv ;";
-
-  $usersQuery =  "SELECT * FROM tbl_users
- OUTPUT TO../../../../www/php_code/app/csvFiles/users.csvv ;";
-
-    $poulesQuery =  "SELECT * FROM tbl_poules
- OUTPUT TO../../../../www/php_code/app/csvFiles/poules.csv ;";
-
- $db = $con->ConnectPDO();
- $db->query($query);
- $db->query($matchQuery);
- //$db->query($playersQuery);
-// $db->query($teamsQuery);
-// $db->query($usersQuery);
-// $db->query($poulesQuery);
+$match = new exportC('tbl_matches','Matches',$con);
+$match->ColName();
 
 }else{
 

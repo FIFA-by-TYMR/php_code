@@ -13,22 +13,23 @@ class exportC
     public $tableName;
     public $fileDirectory;
     public $dbHandle;
+    public $Database;
 
-    public function __construct($tableName, $fileDir, $dbhandle)
+    public function __construct($tableName, $filename, $dbhandle)
     {
         $this->tableName = $tableName;
-        $this->fileDirectory = $fileDir;
-        $this->dbHandle = $dbhandle;
+        $this->fileDirectory = $filename;
+        $this->Database = $dbhandle;
         $this->query = "    SELECT `COLUMN_NAME`
         FROM `INFORMATION_SCHEMA`.`COLUMNS`
         WHERE `TABLE_NAME`='$tableName'
-        INTO OUTFILE '$fileDir'
+        INTO OUTFILE '../../../../www/php_code/app/csvFiles/$filename.csv'
           FIELDS TERMINATED BY ','
           ENCLOSED BY ''
           LINES TERMINATED BY ','";
         $this->query1 = "
-        SELECT * FROM '$tableName'
-            INTO OUTFILE '$fileDir'
+        SELECT * FROM $tableName
+            INTO OUTFILE '../../../../www/php_code/app/csvFiles/$filename.1.csv'
             FIELDS ESCAPED BY ''
             TERMINATED BY ','
             ENCLOSED BY ''
@@ -38,7 +39,12 @@ class exportC
 
         public function ColName()
         {
-            $dbHandle->
+         $this->dbHandle = $this->Database->ConnectPDO();
+         $this->dbHandle->Query($this->query);
+         $this->dbHandle->Query($this->query1);
+         $file = file("csvFiles/$this->fileDirectory.csv");
+         $file1 = file("csvFiles/$this->fileDirectory.1.csv");
+         file_put_contents("csvFiles/$this->fileDirectory.csv", $file1 . PHP_EOL ,FILE_APPEND  );
         }
 
 }
