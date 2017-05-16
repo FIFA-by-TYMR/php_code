@@ -78,32 +78,46 @@ else{
 //</editor-fold>
 
 if ($matchBool && $playersBool && $teamsBool && $usersBool){
-//    $matchQuery =   "SELECT * FROM tbl_matches
-//    INTO OUTFILE '../../../../www/php_code/app/csvFiles/matches.csv'
-//    FIELDS ESCAPED BY ''
-//    TERMINATED BY ','
-//    ENCLOSED BY ''
-//    LINES TERMINATED BY '\r\n';";
-$matchQuery = "SELECT * FROM Tbl_matches; 
-OUTPUT TO ../../../../www/php_code/app/csvFiles/matches.csv WITH COLUMN NAMES";
+    $matchQuery =   "
+@f = 'SELECT `COLUMN_NAME`
+FROM `INFORMATION_SCHEMA`.`COLUMNS`
+WHERE `TABLE_NAME`='tbl_matches''
+
+    INTO OUTFILE '../../../../www/php_code/app/csvFiles/Matches.csv'
+SELECT id,team_id_a,team_id_b,score_team_a,score_team_b,match_duration FROM Tbl_matches
+    INTO OUTFILE '../../../../www/php_code/app/csvFiles/Matches.csv'
+    FIELDS ESCAPED BY ''
+    TERMINATED BY ','
+    ENCLOSED BY ''
+    LINES TERMINATED BY '\r\n';";
+//$matchQuery = "
+//select 'id','team_id_a','team_id_b','score_team_a','score_team_b','match_duration' UNION ALL
+//SELECT id,team_id_a,team_id_b,score_team_a,score_team_b,match_duration FROM Tbl_matches;
+//INTO OUTFILE '../../../../www/php_code/app/csvFiles/Matches.csv'
+//";
+//
+//    $testquery= "SELECT `COLUMN_NAME`
+//FROM `INFORMATION_SCHEMA`.`COLUMNS`
+//WHERE `TABLE_NAME`='tbl_matches';";
+//    $matchQuery =
    $playersQuery = "SELECT * FROM tbl_players
-OUTPUT TO ../../../www/php_code/app/csvFiles/players.csv WITH COLUMN NAMES;";
+INTO  ../../../www/php_code/app/csvFiles/players.csv ;";
 
    $teamsQuery =  "SELECT * FROM tbl_teams
-OUTPUT TO ../../../../www/php_code/app/csvFiles/teams.csv WITH COLUMN NAMES;";
+OUTPUT TO ../../../../www/php_code/app/csvFiles/teams.csv ;";
 
   $usersQuery =  "SELECT * FROM tbl_users
- OUTPUT TO../../../../www/php_code/app/csvFiles/users.csvv WITH COLUMN NAMES;";
+ OUTPUT TO../../../../www/php_code/app/csvFiles/users.csvv ;";
 
     $poulesQuery =  "SELECT * FROM tbl_poules
- OUTPUT TO../../../../www/php_code/app/csvFiles/poules.csv WITH COLUMN NAMES;";
+ OUTPUT TO../../../../www/php_code/app/csvFiles/poules.csv ;";
 
  $db = $con->ConnectPDO();
-    $db->query($matchQuery);
-    $db->query($playersQuery);
-    $db->query($teamsQuery);
-    $db->query($usersQuery);
-    $db->query($poulesQuery);
+ $db->query($matchQuery);
+// $db->query($playersQuery);
+// $db->query($teamsQuery);
+// $db->query($usersQuery);
+// $db->query($poulesQuery);
 
 }else{
 
