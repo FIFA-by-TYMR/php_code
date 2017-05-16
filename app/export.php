@@ -78,13 +78,17 @@ else{
 //</editor-fold>
 
 if ($matchBool && $playersBool && $teamsBool && $usersBool){
-    $matchQuery =   "
-@f = 'SELECT `COLUMN_NAME`
+    $query = "    SELECT `COLUMN_NAME`
 FROM `INFORMATION_SCHEMA`.`COLUMNS`
-WHERE `TABLE_NAME`='tbl_matches''
+WHERE `TABLE_NAME`='tbl_matches'
+INTO OUTFILE '../../../../www/php_code/app/csvFiles/1matches.csv'
+    FIELDS TERMINATED BY ','
+    ENCLOSED BY ''
+    LINES TERMINATED BY ','";
+    $matchQuery =   "
 
-    INTO OUTFILE '../../../../www/php_code/app/csvFiles/Matches.csv'
-SELECT id,team_id_a,team_id_b,score_team_a,score_team_b,match_duration FROM Tbl_matches
+
+SELECT * FROM Tbl_matches
     INTO OUTFILE '../../../../www/php_code/app/csvFiles/Matches.csv'
     FIELDS ESCAPED BY ''
     TERMINATED BY ','
@@ -113,8 +117,9 @@ OUTPUT TO ../../../../www/php_code/app/csvFiles/teams.csv ;";
  OUTPUT TO../../../../www/php_code/app/csvFiles/poules.csv ;";
 
  $db = $con->ConnectPDO();
+ $db->query($query);
  $db->query($matchQuery);
-// $db->query($playersQuery);
+ //$db->query($playersQuery);
 // $db->query($teamsQuery);
 // $db->query($usersQuery);
 // $db->query($poulesQuery);
