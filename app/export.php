@@ -9,6 +9,12 @@ require "connectToDatabase1.php";
 require "exportC.php";
 $con = new ConnectToDatabase1("root","","localhost","project_fifa");
 
+$files = glob('csvFiles/*'); //get all file names
+foreach($files as $file){
+    if(is_file($file))
+        unlink($file); //delete file
+}
+
 //<editor-fold desc="handeling of variables">
 if (isset($_POST['match']) ){
     $matchBool = $_POST['match'];
@@ -79,30 +85,98 @@ else{
 }
 //</editor-fold>
 
-if ($matchBool && $playersBool && $teamsBool && $usersBool){
+if ($matchBool && $playersBool && $teamsBool && $usersBool && $poulesBool){
+
+
 $match = new exportC('tbl_matches','Matches',$con);
+$players = new exportC('tbl_players','Players',$con);
+$teams = new exportC('tbl_teams','Teams',$con);
+$users = new exportC('tbl_users','Users',$con);
+$poules = new exportC('tbl_poules','Poules',$con);
+$poules->ColName();
 $match->ColName();
+$players->ColName();
+$teams->ColName();
+$users->ColName();
+    $files = glob('csvFiles/*.1.csv'); //get all file names
 
 }else{
+    if ($matchBool){
+        $match = new exportC('tbl_matches','Matches',$con);
+        $match->ColName();
+
+    }
+    else{
+
+    }
+    if ($playersBool){
+        $players = new exportC('tbl_players','Players',$con);
+        $players->ColName();
+
+    }
+    else{
+
+    }
+    if ($teamsBool) {
+        $teams = new exportC('tbl_teams', 'Teams', $con);
+        $teams->ColName();
+    }
+
+    else{
+
+    }
+    if ($usersBool){
+        $users = new exportC('tbl_users','Users',$con);
+        $users->ColName();
+    }
+    else{
+
+    }
+    if ($poulesBool){
+        $poules = new exportC('tbl_poules','Poules',$con);
+        $poules->ColName();
+    }
+    else{
+
+    }
 
 }
-?>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-<a download="csvFiles/users.csv">users</a>
-<a download="csvFiles/teams.csv">teams</a>
-<a download="csvFiles/matches.csv">matches</a>
-<a download="csvFiles/players.csv">players</a>
-<a download="csvFiles/poules.csv">poules</a>
+$files = glob('csvFiles/*.1.csv'); //get all file names
+foreach($files as $file){
+    if(is_file($file))
+        unlink($file); //delete file
+}
 
-</body>
-</html>
+?>
+<?php
+// Get real path for our folder
+$rootPath = realpath('csvFiles');
+
+// Initialize archive object
+$zip = new ZipArchive();
+$zip->open('sql.zip', ZipArchive::CREATE | ZipArchive::OVERWRITE);
+
+// Create recursive directory iterator
+/** @var SplFileInfo[] $files */
+$files = new RecursiveIteratorIterator(
+    new RecursiveDirectoryIterator($rootPath),
+    RecursiveIteratorIterator::LEAVES_ONLY
+);
+
+foreach ($files as $name => $file)
+{
+    if (!$file->isDir())
+    {
+
+        $filePath = $file->getRealPath();
+        $relativePath = substr($filePath, strlen($rootPath) + 1);
+        $zip->addFile($filePath, $relativePath);
+    }
+}
+$zip->close();
+
+header('Content-Disposition: attachment; filename="sql.zip"');
+readfile('sql.zip');
+header('location : ../ ');
+?>
 
