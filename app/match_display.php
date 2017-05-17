@@ -1,25 +1,7 @@
 <?php
-$team = $_POST['match'];
-$first = intval($_POST['first']);
-$rest = intval($_POST['pause']);
-$second = intval($_POST['second']);
-$totalTime = $first+$rest+$second;
-
-
-$sqlQueryTeam = "SELECT id FROM tbl_matches WHERE id ='$team'";
-
-$date = new DateTime('2017-06-30');
-$date->setTime(8, 00);
-$tijd = $date->format('H:i');
 
 require_once "connection.php";
-//het ophalen van het game id
-$gameidq = $db_conn->prepare($sqlQueryTeam);
-$gameid =$gameidq->execute();
-$result = $gameidq->setFetchMode(PDO::FETCH_ASSOC);
-// eind ophalen game id
 
-// het weergeven van de teams en tijden
 $stmt = $db_conn->prepare("SELECT * FROM tbl_matches");
 $stmt->execute();
 $match_row = $stmt->rowCount();
@@ -33,21 +15,28 @@ $stmt->execute();
 $matches = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
+// Set date of the tournament:
+$date = new DateTime('2017-06-30');
+
+//Set time when the matches need to begin:
+$date->setTime(8, 00);
+
+//Set the display mode now is(Hour - Min)
+$tijd = $date->format('H:i');
 
     foreach ($matches as $match)
         {
-
-
-                //Change duration of a match
-            $date->modify('+'.$totalTime.' minutes');
-
-            //Set the display mode now is(Hour - Min)
-            $tijd = $date->format('H:i');
-            echo "<tr>
+            echo
+                "<tr>
                     <th class=\"text-center\">" . $match['team_a'] ."</th>
-                    <th class=\"text-center\">". $totalTime."</th>
+                    <th class=\"text-center\">". $tijd."</th>
                     <th class=\"text-center\">" . $match['team_b'] ."</th>
                  </tr>";
 
+            //Change duration of a match
+            $date->modify('+25 minutes');
+
+            //Set the display mode now is(Hour - Min)
+            $tijd = $date->format('H:i');
         }
-// eind weergeven teams en tijden
+

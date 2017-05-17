@@ -1,7 +1,7 @@
 body{
     /*Image get from: http://wallpaper-gallery.net/wallpapers/hd-football-wallpapers.html*/
-    /*background-image: url("../img/bg3.jpg");*/
-    background-color: black;
+    /*background-image: url("../img/bg1.jpg");*/
+    background-color: lightblue;
     background-size: cover;
 }
 
@@ -40,7 +40,7 @@ header img{
     font-weight: bolder;
     text-shadow: 2px 2px #000000;
 }
-.footer{
+}.footer{
     color: #000000;
     font-weight: bold;
  }
@@ -54,3 +54,111 @@ header img{
      font-weight: bold;
      text-shadow: 2px 2px #000000;
  }
+ .playoff{
+     margin-top: 6.9em;
+     margin-left: 3.7em;
+     font-size: 20px;
+     color: #f6f6f6;
+     font-weight: bold;
+     text-shadow: 2px 2px #000000;
+     list-style: none;
+ }
+ /*///////////////////////////////BRON: https://codepen.io///////////////////////////*/
+.play-off{
+    display:flex;
+    flex-direction:row;
+    display: flex;
+    justify-content: center;
+}
+.round{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    width:200px;
+    list-style:none;
+    padding:0;
+}
+.round .spacer{ flex-grow:1; }
+.round .spacer:first-child,
+.round .spacer:last-child{ flex-grow:.5; }
+
+.round .game-spacer{
+    flex-grow:1;
+}
+
+/*
+ *  General Styles
+*/
+.play-off{
+    font-family:sans-serif;
+    font-size:small;
+    padding:10px;
+    line-height:1.4em;
+}
+
+li.game{
+    padding-left:20px;
+}
+
+li.game.winner{
+    font-weight:bold;
+}
+li.game span{
+    float:right;
+    margin-right:5px;
+}
+
+li.game-top{ border-bottom:1px solid #aaa; }
+
+li.game-spacer{
+    border-right:1px solid #aaa;
+    min-height:40px;
+}
+
+li.game-bottom{
+    border-top:1px solid #aaa;
+}
+/*///////////////////////////////BRON: https://codepen.io///////////////////////////*/
+
+/*/////////////////////////////////POULE A & B////////////////////////////////*/
+.poule-a-b{
+    display: flex;
+    justify-content: center;
+}
+.poule-a-b h3{
+    padding-left: 7px;
+}
+.poule-a, .poule-b{
+    margin-top: 1.8em;
+    border: solid;
+    width: 500px;
+    height: 300px;
+    color: black;
+}
+.poule-b{
+    margin-left: 100px;
+}
+.poule-a ul, .poule-b ul{
+    list-style: none;
+}
+/*/////////////////////////////////POULE C & D////////////////////////////////*/
+.poule-c-d{
+    display: flex;
+    justify-content: center;
+}
+.poule-c-d h3{
+    padding-left: 7px;
+}
+.poule-c, .poule-d{
+    margin-top: 1.8em;
+    border: solid;
+    width: 500px;
+    height: 300px;
+    color: black;
+}
+.poule-d{
+    margin-left: 100px;
+}
+.poule-c ul, .poule-d ul{
+    list-style: none;
+}

@@ -12,7 +12,20 @@ else
 
     <div class="main-content">
 
-        <!-- site's main content goes here -->
+        <div class="container">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th class="text-center">Team A</th>
+                    <th class="text-center">Uitslag</th>
+                    <th class="text-center">Team B</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php require "../app/result_display.php"; ?>
+                </tbody>
+            </table>
+        </div>
 
 
     </div>

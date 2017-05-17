@@ -4,10 +4,6 @@
         <div class="container">
             <form action="../../app/match_display.php" method="post" class="form-horizontal col-md-2">
                 <div class="form-group">
-                    <label for="match" class="control-label">De volgende tijden zijn voor wedstrijd:</label>
-                    <input type="number" id="match" name="match" placeholder= "wedstrijd" class="form-control">
-                </div>
-                <div class="form-group">
                     <label for="first" class="control-label">Eerste helft duurt:</label>
                     <input type="number" id="first" name="first" placeholder="30" class="form-control">
                 </div>

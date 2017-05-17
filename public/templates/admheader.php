@@ -30,10 +30,10 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="navigate nav navbar-nav text-center">
-                <li><a href="../admin/admindex.php">Tijdsduur wijzigen</a></li>
-                <li><a href="../admin/addteam.php">Team toevoegen</a></li>
-                <li><a href="../admin/addresult.php">Resultaat toevoegen</a></li>
-                <li><a href="../admin/exportCSV.php">Exporteren</a></li>
+                <li><a href="../admin/admindex.php">Home</a></li>
+                <li><a href="../admin/addteam.php">Team Toevoegen</a></li>
+                <li><a href="../admin/addresult.php">Resultaat Toevoegen</a></li>
+                <li><a href="../admin/export.php">Exporteren</a></li>
             </ul>
             <div class="navigate collapse nav navbar-collapse pull-right" id="myNavbar">
                 <ul class="nav navbar-nav">
