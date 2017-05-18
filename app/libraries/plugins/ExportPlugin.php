@@ -97,7 +97,7 @@ abstract class ExportPlugin
     );
 
     /**
-     * The following methods are used in export.php or in db_operations.php,
+     * The following methods are used in exportCSV.php or in db_operations.php,
      * but they are not implemented by all export plugins
      */
 
@@ -139,7 +139,7 @@ abstract class ExportPlugin
      * @param bool   $relation    whether to include relation comments
      * @param bool   $comments    whether to include the pmadb-style column comments
      *                            as comments in the structure; this is deprecated
-     *                            but the parameter is left here because export.php
+     *                            but the parameter is left here because exportCSV.php
      *                            calls exportStructure() also for other export
      *                            types which use this parameter
      * @param bool   $mime        whether to include mime comments

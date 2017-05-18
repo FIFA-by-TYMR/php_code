@@ -52,7 +52,7 @@ function PMA_getHtmlForExportSelectOptions($tmp_select = '')
     $multi_values .= "\n";
 
     // Check if the selected databases are defined in $_GET
-    // (from clicking Back button on export.php)
+    // (from clicking Back button on exportCSV.php)
     if (isset($_GET['db_select'])) {
         $_GET['db_select'] = urldecode($_GET['db_select']);
         $_GET['db_select'] = explode(",", $_GET['db_select']);
@@ -1074,7 +1074,7 @@ function PMA_getExportDisplay(
         $html .= PMA_getHtmlForExportTemplateLoading($export_type);
     }
 
-    $html .= '<form method="post" action="export.php" '
+    $html .= '<form method="post" action="exportCSV.php" '
         . ' name="dump" class="disableAjax">';
 
     //output Hidden Inputs
