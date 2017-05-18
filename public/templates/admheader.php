@@ -33,7 +33,7 @@
                 <li><a href="../admin/admindex.php">Home</a></li>
                 <li><a href="../admin/addteam.php">Team Toevoegen</a></li>
                 <li><a href="../admin/addresult.php">Resultaat Toevoegen</a></li>
-                <li><a href="../admin/export.php">Exporteren</a></li>
+                <li><a href="../admin/exportCSV.php">Exporteren</a></li>
             </ul>
             <div class="navigate collapse nav navbar-collapse pull-right" id="myNavbar">
                 <ul class="nav navbar-nav">
