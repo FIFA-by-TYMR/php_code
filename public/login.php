@@ -32,11 +32,11 @@
         <form action="../app/login.php" method="post" class="form-horizontal col-md-6 col-md-offset-3">
             <div class="form-group">
                 <label for="Email" class="control-label">Email</label>
-                <input type="email" id="Email" name="email" placeholder="voorbeeld@hotmail.nl" class="form-control">
+                <input type="email" id="Email" name="email" placeholder="voorbeeld@hotmail.nl" class="form-control" required>
             </div>
             <div class="form-group">
-                <label for="Pass">Wachtwoord</label>
-                <input type="password" id="Pass" name="pass" placeholder="" class="form-control">
+                <label for="Pass" class="control-label">Wachtwoord</label>
+                <input type="password" id="Pass" name="pass" placeholder="" class="form-control" required>
             </div>
             <div class="form-group">
                 <input type="submit" value="Inloggen" class="form-control btn btn-primary">

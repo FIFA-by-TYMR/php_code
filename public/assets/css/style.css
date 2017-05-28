@@ -40,7 +40,7 @@ header img{
     font-weight: bolder;
     text-shadow: 2px 2px #000000;
 }
-}.footer{
+.footer{
     color: #000000;
     font-weight: bold;
  }
@@ -104,7 +104,7 @@ li.game.winner{
     font-weight:bold;
 }
 li.game span{
-    float:right;
+    float: right;
     margin-right:5px;
 }
 
@@ -117,48 +117,4 @@ li.game-spacer{
 
 li.game-bottom{
     border-top:1px solid #aaa;
-}
-/*///////////////////////////////BRON: https://codepen.io///////////////////////////*/
-
-/*/////////////////////////////////POULE A & B////////////////////////////////*/
-.poule-a-b{
-    display: flex;
-    justify-content: center;
-}
-.poule-a-b h3{
-    padding-left: 7px;
-}
-.poule-a, .poule-b{
-    margin-top: 1.8em;
-    border: solid;
-    width: 500px;
-    height: 300px;
-    color: black;
-}
-.poule-b{
-    margin-left: 100px;
-}
-.poule-a ul, .poule-b ul{
-    list-style: none;
-}
-/*/////////////////////////////////POULE C & D////////////////////////////////*/
-.poule-c-d{
-    display: flex;
-    justify-content: center;
-}
-.poule-c-d h3{
-    padding-left: 7px;
-}
-.poule-c, .poule-d{
-    margin-top: 1.8em;
-    border: solid;
-    width: 500px;
-    height: 300px;
-    color: black;
-}
-.poule-d{
-    margin-left: 100px;
-}
-.poule-c ul, .poule-d ul{
-    list-style: none;
 }

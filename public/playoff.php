@@ -59,49 +59,5 @@
             <li class="game game-top">Lorem</li>
         </ul>
     </div>
-<!--//////////////////////////////////////////////////////////////////////////////////-->
-<div class="poule-a-b">
-    <div class="poule-a">
 
-        <h3>Poule A</h3>
-        <ul>
-            <li>Team A</li>
-            <li>Team A</li>
-            <li>Team A</li>
-            <li>Team A</li>
-        </ul>
-    </div>
-
-    <div class="poule-b">
-        <h3>Poule B</h3>
-        <ul>
-            <li>Team B</li>
-            <li>Team B</li>
-            <li>Team B</li>
-            <li>Team B</li>
-        </ul>
-    </div>
-</div>
-    <div class="poule-c-d">
-        <div class="poule-c">
-
-            <h3>Poule C</h3>
-            <ul>
-                <li>Team C</li>
-                <li>Team C</li>
-                <li>Team C</li>
-                <li>Team C</li>
-            </ul>
-        </div>
-
-        <div class="poule-d">
-            <h3>Poule D</h3>
-            <ul>
-                <li>Team D</li>
-                <li>Team D</li>
-                <li>Team D</li>
-                <li>Team D</li>
-            </ul>
-        </div>
-    </div>
 <?php require(realpath(__DIR__) . '/templates/footer.php');
