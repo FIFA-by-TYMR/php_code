@@ -22,15 +22,15 @@
                 <form action="../../app/timeSetUp.php" method="post" class="form-horizontal">
                     <div class="form-group">
                         <label for="first" class="control-label">Eerste helft duurt:</label>
-                        <input type="number" id="first" name="first" placeholder="30" class="form-control" min="1" required>
+                        <input type="number" id="first" name="first" placeholder="30" min="1" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="pause" class="control-label">Pauze duurt:</label>
-                        <input type="number" id="pause" name="pause" placeholder="15" class="form-control" min="1" required>
+                        <input type="number" id="pause" name="pause" placeholder="15" min="1" class="form-control"  required>
                     </div>
                     <div class="form-group">
                         <label for="second" class="control-label">Twede helft duurt:</label>
-                        <input type="number" id="second" name="second" placeholder="30" class="form-control" min="1" required>
+                        <input type="number" id="second" name="second" placeholder="30" min="1" class="form-control"  required>
                     </div>
                     <div class="form-group">
                         <input type="submit" value="Tijd veranderen" class="form-control btn btn-primary">

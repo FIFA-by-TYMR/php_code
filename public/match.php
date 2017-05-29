@@ -11,7 +11,6 @@ else
 ?>
 
     <div class="main-content">
-
         <div class="container">
             <table class="table">
                 <thead>
@@ -26,8 +25,6 @@ else
                 </tbody>
             </table>
         </div>
-
-
     </div>
 
 <?php require(realpath(__DIR__) . '/templates/footer.php');

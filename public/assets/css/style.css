@@ -54,15 +54,7 @@ header img{
      font-weight: bold;
      text-shadow: 2px 2px #000000;
  }
- .playoff{
-     margin-top: 6.9em;
-     margin-left: 3.7em;
-     font-size: 20px;
-     color: #f6f6f6;
-     font-weight: bold;
-     text-shadow: 2px 2px #000000;
-     list-style: none;
- }
+
  /*///////////////////////////////BRON: https://codepen.io///////////////////////////*/
 .play-off{
     display:flex;
@@ -117,4 +109,25 @@ li.game-spacer{
 
 li.game-bottom{
     border-top:1px solid #aaa;
+}
+
+/*==================POULES================= */
+.poule_up{
+    margin:50px 0 0 0;
+    border:1px solid red;
+    height: 300px;
+}
+
+.poule_up ul{
+    padding:15px 15px;
+}
+
+.poule_down{
+    margin:50px 0 150px 0;
+    border:1px solid red;
+    height: 300px;
+}
+
+.poule_down ul{
+    padding:15px 15px;
 }
