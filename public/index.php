@@ -16,10 +16,11 @@
                 <img src="http://wacbeekendonk.nl/wp-content/uploads/2016/05/vriendschappelijk.png" alt="main_IMG" class="img-responsive center-block img-circle">
             </div>
             <div class="index_Beschrijving text-center">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus at blanditiis deleniti earum eos fugiat itaque labore minus necessitatibus non odio, praesentium quasi repellat totam unde! Ad autem consectetur esse.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi cupiditate esse harum hic molestiae praesentium quos. Dolor error fugiat harum, inventore, iure maiores nostrum odit quis quos rem sapiente voluptate.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi culpa cupiditate delectus doloremque dolores eligendi enim facilis, fugit hic impedit ipsam laboriosam libero magni maiores, officiis quas, ullam voluptas.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim est fuga placeat recusandae reiciendis repellendus similique! Accusamus atque, consequuntur, cumque doloremque dolores ea id, iusto modi nemo provident totam voluptatem?</p>
+                <p>Wij zijn 4 studenten van het Radius College, wij studeren applicatie en media ontwikkeling. Wat u nu ziet is een van onze vele projecten die we het afgelopen jaar hebben moeten maken.
+                </p>
+                <p>Dit project genaamd ‘Fifa’ heeft 2 onderdelen, een gaat over een webapp waar je teams kan toevoegen, en wedstrijd info kan zien en het 2e onderdeel is een C# app waar je wedstrijden kan voorspellen en misschien iets kan winnen.
+                </p>
+                <p>De tijden van de wedstrijden en eventuele informatie zijn allemaal te vinden op de website. De datum is nog niet vastgelegd en word binnenkort geupdate.</p>
             </div>
         </div>
     </div>
