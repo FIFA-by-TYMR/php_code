@@ -40,6 +40,6 @@ if ($validate->validateTime($first, $pause, $second) == true)
     $_SESSION['success'] = "Tijden zijn aangepast";
 }
 else{
-    $_SESSION['error'] = "Je hebt geen geldige tijd ingevoerd. Tijd kan niet op min staan";
+    $_SESSION['error'] = "Je hebt geen geldige tijd ingevoerd. Tijd mag geen - bevaten ";
 }
 header("location: ../public/admin/admindex.php");
