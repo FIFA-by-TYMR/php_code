@@ -1,6 +1,12 @@
 <?php
-
+session_start();
 require_once "connection.php";
+
+$first = $_POST['first'];
+$pause = $_POST['pause'];
+$second = $_POST['second'];
+
+$count = $first + $pause  + $second;
 
 $stmt = $db_conn->prepare("SELECT `start_time` FROM tbl_matches");
 $stmt->execute();
@@ -24,6 +30,8 @@ for ($i = 0; $i <= $matches; $i++)
     $tijd = $date->format('Y-m-d H:i:s');
 
     //Hoe much time will be add for one match
-    $date->modify('+25 minutes');
+    $date->modify('+'.$count.' minutes');
 }
+$_SESSION['success'] = "Tijden zijn aangepast";
+
 header("location: ../public/admin/admindex.php");
