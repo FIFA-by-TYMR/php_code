@@ -26,7 +26,7 @@ class exportC
         INTO OUTFILE '../../../../www/php_code/app/csvFiles/$filename.csv'
           FIELDS TERMINATED BY ','
           ENCLOSED BY ''
-          LINES TERMINATED BY ','";
+          LINES TERMINATED BY ''";
         $this->query1 = "
         SELECT * FROM $tableName
             INTO OUTFILE '../../../../www/php_code/app/csvFiles/$filename.1.csv'
