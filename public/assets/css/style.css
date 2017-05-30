@@ -121,3 +121,8 @@ li.game-bottom{
 .poule_down ul{
     padding:15px 15px;
 }
+
+.match_select {
+    text-align: center;
+    text-align-last: center;
+}
