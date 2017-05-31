@@ -4,7 +4,7 @@
         <div class="container">
             <div class="col-md-8 col-md-offset-2">
                 <form action="">
-                    <select name="match" id="Match" class="form-control">
+                    <select name="match" id="Match" class="form-control match_select">
                         <?php
                             //Load matches that are played
                             require "../../app/selectMatches.php";
