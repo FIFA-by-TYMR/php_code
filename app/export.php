@@ -5,9 +5,8 @@
  * Date: 5/15/2017
  * Time: 3:22 PM
  */
-require "connectToDatabase1.php";
+require "connection.php";
 require "exportC.php";
-$con = new ConnectToDatabase1("root","","localhost","project_fifa");
 
 $files = glob('csvFiles/*'); //get all file names
 foreach($files as $file){
@@ -87,12 +86,11 @@ else{
 
 if ($matchBool && $playersBool && $teamsBool && $usersBool && $poulesBool){
 
-
-$match = new exportC('tbl_matches','Matches',$con);
-$players = new exportC('tbl_players','Players',$con);
-$teams = new exportC('tbl_teams','Teams',$con);
-$users = new exportC('tbl_users','Users',$con);
-$poules = new exportC('tbl_poules','Poules',$con);
+$match = new exportC('tbl_matches','Matches',$db_conn);
+$players = new exportC('tbl_players','Players',$db_conn);
+$teams = new exportC('tbl_teams','Teams',$db_conn);
+$users = new exportC('tbl_users','Users',$db_conn);
+$poules = new exportC('tbl_poules','Poules',$db_conn);
 $poules->ColName();
 $match->ColName();
 $players->ColName();
@@ -102,7 +100,7 @@ $users->ColName();
 
 }else{
     if ($matchBool){
-        $match = new exportC('tbl_matches','Matches',$con);
+        $match = new exportC('tbl_matches','Matches',$db_conn);
         $match->ColName();
 
     }
@@ -110,7 +108,7 @@ $users->ColName();
 
     }
     if ($playersBool){
-        $players = new exportC('tbl_players','Players',$con);
+        $players = new exportC('tbl_players','Players',$db_conn);
         $players->ColName();
 
     }
@@ -118,7 +116,7 @@ $users->ColName();
 
     }
     if ($teamsBool) {
-        $teams = new exportC('tbl_teams', 'Teams', $con);
+        $teams = new exportC('tbl_teams', 'Teams', $db_conn);
         $teams->ColName();
     }
 
@@ -126,14 +124,14 @@ $users->ColName();
 
     }
     if ($usersBool){
-        $users = new exportC('tbl_users','Users',$con);
+        $users = new exportC('tbl_users','Users',$db_conn);
         $users->ColName();
     }
     else{
 
     }
     if ($poulesBool){
-        $poules = new exportC('tbl_poules','Poules',$con);
+        $poules = new exportC('tbl_poules','Poules',$db_conn);
         $poules->ColName();
     }
     else{

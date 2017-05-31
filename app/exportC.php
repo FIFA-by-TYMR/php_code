@@ -36,10 +36,9 @@ class exportC
             LINES TERMINATED BY '\r\n';";
     }
 
-
         public function ColName()
         {
-         $this->dbHandle = $this->Database->ConnectPDO();
+         $this->dbHandle = $this->Database;
          $this->dbHandle->Query($this->query);
          $this->dbHandle->Query($this->query1);
          $file = file("csvFiles/$this->fileDirectory.csv");
