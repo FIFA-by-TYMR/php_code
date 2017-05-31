@@ -4,7 +4,7 @@
 <!--    </div>-->
 <!--</div>-->
 <div class="footer">
-    <div class="footer navbar-fixed-bottom">
+    <div class="footer">
         <nav class="navbar-inverse">
             <p class="muted credit text-center">&#169; door Tomasz, Youssef, Max en Remco.</p>
         </nav>

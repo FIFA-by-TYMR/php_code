@@ -1,7 +1,7 @@
 <?php require '../templates/admheader.php'?>
 
     <div class="main-content">
-        <div class="container">
+        <div class="container wrapper">
             <div class="col-md-12">
                 <?php
                 session_start();

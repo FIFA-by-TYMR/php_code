@@ -1,26 +1,20 @@
 <?php require '../templates/admheader.php'?>
 
     <div class="main-content">
-
-        <div class="container">
-            <div class="col-md-8">
-                <?php
-                session_start();
-                if(isset($_SESSION['error']))
-                {
-                    echo '<div class="text-center alert-danger">' . $_SESSION['error'] . '</div>';
-                    unset($_SESSION['error']);
-                }
-                if(isset($_SESSION['success']))
-                {
-                    echo '<div class="text-center alert-success">' . $_SESSION['success'] . '</div>';
-                    unset($_SESSION['success']);
-                }
-                ?>
-            </div>
-        </div>
-
-        <div class="container">
+        <div class="container wrapper">
+            <?php
+            session_start();
+            if(isset($_SESSION['error']))
+            {
+                echo '<div class="text-center alert-danger">' . $_SESSION['error'] . '</div>';
+                unset($_SESSION['error']);
+            }
+            if(isset($_SESSION['success']))
+            {
+                echo '<div class="text-center alert-success">' . $_SESSION['success'] . '</div>';
+                unset($_SESSION['success']);
+            }
+            ?>
             <form action="../../app/addteam.php" method="post" class="form-horizontal col-md-8">
                 <div class="form-group">
                     <label for="Team" class="control-label">Team Naam</label>
@@ -69,8 +63,6 @@
             ?>
             </div>
         </div>
-
-
     </div>
 
 

@@ -9,8 +9,7 @@
         require(realpath(__DIR__) . '/templates/header.php');
     }
 ?>
-
-    <div class="container">
+    <div class="container wrapper">
         <?php
         if(isset($_SESSION['error']))
         {
@@ -26,9 +25,6 @@
             echo '';
         }
         ?>
-    </div>
-
-    <div class="container">
         <form action="../app/login.php" method="post" class="form-horizontal col-md-6 col-md-offset-3">
             <div class="form-group">
                 <label for="Email" class="control-label">Email</label>

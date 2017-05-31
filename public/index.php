@@ -10,8 +10,8 @@
     }
 ?>
 
-    <div class="main-content">
-        <div class="container">
+    <div class="main-content ">
+        <div class="container wrapper">
             <div class="index_IMG">
                 <img src="http://wacbeekendonk.nl/wp-content/uploads/2016/05/vriendschappelijk.png" alt="main_IMG" class="img-responsive center-block img-circle">
             </div>
