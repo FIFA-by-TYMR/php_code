@@ -46,15 +46,15 @@
                 </div>
                 <div class="form-group form-inline">
                     <label for="P4" class="control-label">Speler 4</label>
-                    <input type="text" id="P4" name="p[4][0]" placeholder="Student ID" class="form-control" required>
-                    <input type="text" id="P4" name="p[4][1]" placeholder="Voornaam" class="form-control" required>
-                    <input type="text" id="P4" name="p[4][2]" placeholder="Achternaam" class="form-control" required>
+                    <input type="text" id="P4" name="p[4][0]" placeholder="Student ID" class="form-control" >
+                    <input type="text" id="P4" name="p[4][1]" placeholder="Voornaam" class="form-control" >
+                    <input type="text" id="P4" name="p[4][2]" placeholder="Achternaam" class="form-control" >
                 </div>
                 <div class="form-group form-inline">
                     <label for="P5" class="control-label">Reserve Speler</label>
-                    <input type="text" id="P5" name="p[5][0]" placeholder="Student ID" class="form-control" required>
-                    <input type="text" id="P5" name="p[5][1]" placeholder="Voornaam" class="form-control" required>
-                    <input type="text" id="P5" name="p[5][2]" placeholder="Achternaam" class="form-control" required>
+                    <input type="text" id="P5" name="r[1][0]" placeholder="Student ID" class="form-control" >
+                    <input type="text" id="P5" name="r[1][1]" placeholder="Voornaam" class="form-control" >
+                    <input type="text" id="P5" name="r[1][2]" placeholder="Achternaam" class="form-control" >
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Team Toevoegen" class="form-control btn btn-primary">

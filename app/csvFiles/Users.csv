@@ -1,0 +1,3 @@
+id,email,pass,created_at,deleted_at,id,email,pass,admin,
+1,admin@admin.com,$2y$10$p4R9ZIIE5QtnzMTbpkbhM.ashfncHmAM9yGfTl.NpOUXgsBeTs1iS,NULL
+2,eb89@rocwb.nl,$2y$10$Z0W5MFKnmhZ7h4j6X7eEcOdGB2uWKw8yMHeBuN5WlNFOZV7SwNS7S,NULL

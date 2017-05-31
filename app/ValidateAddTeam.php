@@ -24,9 +24,28 @@ class ValidateAddTeam
             return true;
 
     }
+    public function validateReservePlayer($r1)
+    {
+        if (empty($r1[2]) || empty($r1[1]) || empty($r1[0])){
+            return false;
+        }
+        return true;
+
+    }
+
     public function validateArray($arr_bool)
     {
         if (in_array(false , $arr_bool))
+        {
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+    public function validateArrayReserve($rarr_bool)
+    {
+        if (in_array(false , $rarr_bool))
         {
             return false;
         }
