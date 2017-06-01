@@ -19,18 +19,16 @@
                     </div>
                 </form>
             </div>
-            <div class="container">
-                <?php
-                    if (isset($_SESSION['matchSelect']))
-                    {
-                        require "../../app/matchScore.php";
-                    }
-                    else
-                    {
-                        echo "";
-                    }
-                ?>
-            </div>
+            <?php
+                if (isset($_SESSION['matchSelect']))
+                {
+                    require "../../app/matchScore.php";
+                }
+                else
+                {
+                    echo "";
+                }
+            ?>
         </div>
     </div>
 
