@@ -12,6 +12,7 @@ else
 
     <div class="main-content">
         <div class="container wrapper">
+            <h3>Geplande Wedstrijden</h3>
             <table class="table">
                 <thead>
                     <tr>
@@ -21,7 +22,20 @@ else
                     </tr>
                 </thead>
                 <tbody>
-                <?php require "../app/match_display.php"; ?>
+                <?php require "../app/matchesToPlay.php"; ?>
+                </tbody>
+            </table>
+            <h3>Gespeelde Wedstrijden:</h3>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th class="text-center">Team A</th>
+                    <th class="text-center">Tijd</th>
+                    <th class="text-center">Team B</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php require "../app/matchesPlayed.php"; ?>
                 </tbody>
             </table>
         </div>
