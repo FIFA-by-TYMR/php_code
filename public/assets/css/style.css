@@ -103,6 +103,14 @@ footer {
     padding: 10px 0 5px 0;
     background-color: #ff3f19;
 }
+
+/*===============================Addresult============================*/
+.addresult {
+    margin-top:50px;
+}
+.addresult input {
+    color: #000;
+}
 /*===============================Media Query============================*/
 @media (max-width: 768px){
     .login{

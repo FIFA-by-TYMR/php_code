@@ -2,7 +2,7 @@
 
 namespace app;
 
-class ValidateTime
+class validateTime
 {
     public function validateTime($first, $pause, $second){
         $min = '-';
@@ -12,6 +12,13 @@ class ValidateTime
         else{
             return true;
         }
-        die();
+    }
+    public function validateTimeNumber($first, $pause, $second){
+        if (is_numeric($first) !== false && is_numeric($pause) !== false && is_numeric($second) !== false ){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }
