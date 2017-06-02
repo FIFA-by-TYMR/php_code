@@ -29,7 +29,7 @@ if ($validate->validateTime($first, $pause, $second) == true)
 
         for ($i = 0; $i <= $matches; $i++)
         {
-            $stmt = $db_conn->prepare("UPDATE `tbl_matches` SET `start_time` = :time WHERE `tbl_matches`.`id` = :id");
+            $stmt = $db_conn->prepare("UPDATE `tbl_matches` SET `start_time` = :time WHERE `tbl_matches`.`id` = :id AND `tbl_matches`.`score_team_a` IS NULL AND `tbl_matches`.`score_team_b` IS NULL");
             $stmt->execute(array("time" => $tijd, "id" => $i));
 
             //Set the display mode now is(Hour - Min)
