@@ -84,8 +84,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     {
                         $id++;
                     }
+                    if ($id == 4){
+                        $_SESSION['error'] = "Je hebt maximale teams per poule bereikt .";
+                    }
                 }
-
             } else {
                 $_SESSION['error'] = "Deze team bestaat al.";
             }
