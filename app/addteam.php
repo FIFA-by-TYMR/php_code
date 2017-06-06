@@ -50,48 +50,42 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     }
                 }
 
-                if ($validate->validateArray($arr_bool) == true && $validate->validateReservePlayer($rarr_bool) == true) {
-                    $stmt = $db_conn->prepare("INSERT INTO tbl_teams (poule_id, `name`) VALUES (:poule_id, :name)");
-                    $stmt->execute(array("poule_id" => 1, "name" => $team));
+                for ($id = 1; $id <= 4;){
+                    $stmt = $db_conn->prepare("SELECT `poule_id` FROM tbl_teams WHERE `poule_id` = :id");
+                    $stmt->execute(array("id" => $id));
+                    $id_count = $stmt->rowCount();
+                    if ($id_count != 4)
+                    {
+                        if ($validate->validateArray($arr_bool) == true) {
+                            $stmt = $db_conn->prepare("INSERT INTO tbl_teams (poule_id, `name`) VALUES (:poule_id, :name)");
+                            $stmt->execute(array("poule_id" => $id, "name" => $team));
 
-                    $stmt = $db_conn->prepare("SELECT id FROM tbl_teams WHERE `name` = :teamname");
-                    $stmt->execute(array("teamname" => $team));
-                    $teamname = $stmt->fetch();
+                            $stmt = $db_conn->prepare("SELECT id FROM tbl_teams WHERE `name` = :teamname");
+                            $stmt->execute(array("teamname" => $team));
+                            $teamname = $stmt->fetch();
 
-                    //Speler toevoegen
-                    foreach ($_POST['p'] as $player) {
-                        $stmt = $db_conn->prepare("INSERT INTO tbl_players (student_id, team_id, first_name, last_name) VALUES (:student_id, :team_id, :first_name, :last_name)");
-                        $stmt->execute(array("student_id" => $player[0], "team_id" => $teamname[0], "first_name" => $player[1], "last_name" => $player[2]));
-                    }
-
-                    //Reserve speller toevoegen
-                    foreach ($_POST['r'] as $rplayer) {
-                        $stmt = $db_conn->prepare("INSERT INTO tbl_players (student_id, team_id, first_name, last_name) VALUES (:student_id, :team_id, :first_name, :last_name)");
-                        $stmt->execute(array("student_id" => $rplayer[0], "team_id" => $teamname[0], "first_name" => $rplayer[1], "last_name" => $rplayer[2]));
-                    }
-                    $_SESSION['success'] = "Team Toegevoegd";
-                }
-                else{
-                    if ($validate->validateArray($arr_bool) == true) {
-                        $stmt = $db_conn->prepare("INSERT INTO tbl_teams (poule_id, `name`) VALUES (:poule_id, :name)");
-                        $stmt->execute(array("poule_id" => 1, "name" => $team));
-
-                        $stmt = $db_conn->prepare("SELECT id FROM tbl_teams WHERE `name` = :teamname");
-                        $stmt->execute(array("teamname" => $team));
-                        $teamname = $stmt->fetch();
-
-                        //Speler toevoegen
-                        foreach ($_POST['p'] as $player) {
-                            $stmt = $db_conn->prepare("INSERT INTO tbl_players (student_id, team_id, first_name, last_name) VALUES (:student_id, :team_id, :first_name, :last_name)");
-                            $stmt->execute(array("student_id" => $player[0], "team_id" => $teamname[0], "first_name" => $player[1], "last_name" => $player[2]));
+                            //Speler toevoegen
+                            foreach ($_POST['p'] as $player) {
+                                $stmt = $db_conn->prepare("INSERT INTO tbl_players (student_id, team_id, first_name, last_name) VALUES (:student_id, :team_id, :first_name, :last_name)");
+                                $stmt->execute(array("student_id" => $player[0], "team_id" => $teamname[0], "first_name" => $player[1], "last_name" => $player[2]));
+                            }
+                            if ($validate->validateArrayReserve($rarr_bool) == true){
+                                //Reserve speller toevoegen
+                                foreach ($_POST['r'] as $rplayer) {
+                                    $stmt = $db_conn->prepare("INSERT INTO tbl_players (student_id, team_id, first_name, last_name) VALUES (:student_id, :team_id, :first_name, :last_name)");
+                                    $stmt->execute(array("student_id" => $rplayer[0], "team_id" => $teamname[0], "first_name" => $rplayer[1], "last_name" => $rplayer[2]));
+                                }
+                            }
+                            $_SESSION['success'] = "Team Toegevoegd";
+                            break;
                         }
-
-                        $_SESSION['success'] = "Team Toegevoegd";
                     }
-                    else{
-                        $_SESSION['error'] = "Er moeten minimaal 4 spelers toegevoegd worden.";
+                    else
+                    {
+                        $id++;
                     }
                 }
+
             } else {
                 $_SESSION['error'] = "Deze team bestaat al.";
             }
