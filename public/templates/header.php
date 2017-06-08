@@ -14,7 +14,7 @@
 <header>
     <div class="container">
         <div class="logo">
-            <img src="./assets/img/logo.png" class="img-responsive center-block">
+            <img src="./assets/img/fifa-dev.png" class="img-responsive center-block">
         </div>
     </div>
 </header>
