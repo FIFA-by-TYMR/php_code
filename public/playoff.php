@@ -62,44 +62,182 @@
                 <li class="game game-top">Lorem</li>
             </ul>
         </div>
-        <div class="container">
-            <div class="col-md-5 poule_up">
+            <div class="col-md-6 poule_up">
                 <h2 class="text-center">Poule A</h2>
-                <ul class="list-unstyled">
-                    <li class="list-group-item-heading">Team A</li>
-                    <li class="list-group-item-heading">Team A</li>
-                    <li class="list-group-item-heading">Team A</li>
-                    <li class="list-group-item-heading">Team A</li>
-                </ul>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Team</th>
+                            <th>Gewonnen</th>
+                            <th>Gelijk</th>
+                            <th>Verloren</th>
+                            <th>Punten</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ajax</td>
+                            <td>3</td>
+                            <td>1</td>
+                            <td>8</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Ajax</td>
+                            <td>3</td>
+                            <td>1</td>
+                            <td>8</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Ajax</td>
+                            <td>3</td>
+                            <td>1</td>
+                            <td>8</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Ajax</td>
+                            <td>3</td>
+                            <td>1</td>
+                            <td>8</td>
+                            <td>10</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="col-md-5 col-md-push-2 poule_up">
+            <div class="col-md-6 poule_up">
                 <h2 class="text-center">Poule B</h2>
-                <ul class="list-unstyled">
-                    <li class="list-group-item-heading">Team B</li>
-                    <li class="list-group-item-heading">Team B</li>
-                    <li class="list-group-item-heading">Team B</li>
-                    <li class="list-group-item-heading">Team B</li>
-                </ul>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th>Gewonnen</th>
+                        <th>Gelijk</th>
+                        <th>Verloren</th>
+                        <th>Punten</th>
+                    </tr>
+                    </thead>
+                    <tbody
+                    <tr>
+                        <td>123456789101112131415161718192</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>8</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Ajax</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>8</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Ajax</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>8</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Ajax</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>8</td>
+                        <td>10</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="col-md-5  poule_down">
+            <div class="col-md-6  poule_down">
                 <h2 class="text-center">Poule C</h2>
-                <ul class="list-unstyled">
-                    <li class="list-group-item-heading">Team C</li>
-                    <li class="list-group-item-heading">Team C</li>
-                    <li class="list-group-item-heading">Team C</li>
-                    <li class="list-group-item-heading">Team C</li>
-                </ul>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th>Gewonnen</th>
+                        <th>Gelijk</th>
+                        <th>Verloren</th>
+                        <th>Punten</th>
+                    </tr>
+                    </thead>
+                    <tbody
+                    <tr>
+                        <td>123456789101112131415161718192</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>8</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Ajax</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>8</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Ajax</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>8</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Ajax</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>8</td>
+                        <td>10</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="col-md-5 col-md-push-2 poule_down">
+            <div class="col-md-6 poule_down">
                 <h2 class="text-center">Poule D</h2>
-                <ul class="list-unstyled">
-                    <li class="list-group-item-heading">Team D</li>
-                    <li class="list-group-item-heading">Team D</li>
-                    <li class="list-group-item-heading">Team D</li>
-                    <li class="list-group-item-heading">Team D</li>
-                </ul>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th>Gewonnen</th>
+                        <th>Gelijk</th>
+                        <th>Verloren</th>
+                        <th>Punten</th>
+                    </tr>
+                    </thead>
+                    <tbody
+                    <tr>
+                        <td>123456789101112131415161718192</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>8</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Ajax</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>8</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Ajax</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>8</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Ajax</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>8</td>
+                        <td>10</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
-        </div>
     </div>
 
 </div>
