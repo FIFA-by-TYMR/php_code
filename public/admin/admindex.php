@@ -36,6 +36,7 @@
                         <input type="submit" value="Tijd veranderen" class="form-control btn btn-primary">
                     </div>
                 </form>
+                
             </div>
             <div class="col-md-4 col-md-push-1">
                 <h2 class="text-center">Team Verwijderen</h2>
@@ -64,7 +65,14 @@
                         <input type="submit" value="Terugzetten" class="btn btn-primary form-control">
                     </div>
                 </form>
+                <h2 class="text-center">Wedstrijden Genereren</h2>
+                <form action="../../app/matchGenerator.php" method="post">
+                    <div class="form-group">
+                        <input type="submit" value="Genereren" class="btn btn-primary form-control">
+                    </div>
+                </form>
             </div>
+
             <div class="col-md-3 center-block col-md-push-2">
                 <h2 class="text-center">Exporteren</h2>
                 <form action="../../app/export.php" method="post" class="form-horizontal col-md-12">
