@@ -62,82 +62,11 @@
                 <li class="game game-top">Lorem</li>
             </ul>
         </div>
-        <div class="col-md-6 poule_up">
-            <h2 class="text-center">Poule A</h2>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Team</th>
-                    <th>Gewonnen</th>
-                    <th>Gelijk</th>
-                    <th>Verloren</th>
-                    <th>Punten</th>
-                </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    require "../app/poulDisplayOne.php";
-                    ?>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-md-6 poule_up">
-            <h2 class="text-center">Poule B</h2>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Team</th>
-                    <th>Gewonnen</th>
-                    <th>Gelijk</th>
-                    <th>Verloren</th>
-                    <th>Punten</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php
-                require "../app/poulDisplayTwo.php";
-                ?>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-md-6 poule_down">
-            <h2 class="text-center">Poule C</h2>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Team</th>
-                    <th>Gewonnen</th>
-                    <th>Gelijk</th>
-                    <th>Verloren</th>
-                    <th>Punten</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php
-                require "../app/poulDisplayThree.php";
-                ?>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-md-6 poule_down">
-            <h2 class="text-center">Poule D</h2>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Team</th>
-                    <th>Gewonnen</th>
-                    <th>Gelijk</th>
-                    <th>Verloren</th>
-                    <th>Punten</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php
-                require "../app/poulDisplayFour.php";
-                ?>
-                </tbody>
-            </table>
-        </div>
+
+        <?php
+        require "../app/poulDisplay.php";
+        ?>
+
     </div>
 
 </div>
