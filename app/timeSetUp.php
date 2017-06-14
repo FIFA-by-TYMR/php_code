@@ -14,31 +14,44 @@ if ($validate->validateTime($first, $pause, $second) == true)
     if ($validate->validateTimeNumber($first,$pause,$second) == true){
         $count = $first + $pause  + $second;
 
-        $stmt = $db_conn->prepare("SELECT `start_time` FROM tbl_matches");
+        $stmt = $db_conn->prepare("SELECT `id` FROM tbl_matches ORDER BY `id` ASC");
         $stmt->execute();
-        $matches = $stmt->rowCount();
+        $firstRow = $stmt->fetch();
 
-        // Set date of the tournament:
-        $date = new DateTime('2017-06-30');
+        $stmt = $db_conn->prepare("SELECT `id` FROM tbl_matches ORDER BY `id` DESC");
+        $stmt->execute();
+        $lastRow = $stmt->fetch();
 
-        //Set time when the matches need to begin:
-        $date->setTime(8, 00);
-
-        //Set the display mode now is(Hour - Min)
-        $tijd = $date->format('Y-m-d H:i:s');
-
-        for ($i = 0; $i <= $matches; $i++)
+        foreach ($firstRow as $firstID)
         {
-            $stmt = $db_conn->prepare("UPDATE `tbl_matches` SET `start_time` = :time WHERE `tbl_matches`.`id` = :id AND `tbl_matches`.`score_team_a` IS NULL AND `tbl_matches`.`score_team_b` IS NULL");
-            $stmt->execute(array("time" => $tijd, "id" => $i));
+            $id = (int)$firstID;
+            foreach ($lastRow as $lastID)
+            {
+                $id = (int)$lastID;
 
-            //Set the display mode now is(Hour - Min)
-            $tijd = $date->format('Y-m-d H:i:s');
+                // Set date of the tournament:
+                $date = new DateTime('2017-06-30');
 
-            //Hoe much time will be add for one match
-            $date->modify('+'.$count.' minutes');
+                //Set time when the matches need to begin:
+                $date->setTime(8, 00);
+
+                //Set the display mode now is(Hour - Min)
+                $tijd = $date->format('Y-m-d H:i:s');
+
+                for ($i = $firstID - 1; $i <= $lastID; $i++)
+                {
+                    $stmt = $db_conn->prepare("UPDATE `tbl_matches` SET `start_time` = :time WHERE `tbl_matches`.`id` = :id AND `tbl_matches`.`score_team_a` IS NULL AND `tbl_matches`.`score_team_b` IS NULL");
+                    $stmt->execute(array("time" => $tijd, "id" => $i));
+
+                    //Set the display mode now is(Hour - Min)
+                    $tijd = $date->format('Y-m-d H:i:s');
+
+                    //Hoe much time will be add for one match
+                    $date->modify('+'.$count.' minutes');
+                }
+                $_SESSION['success'] = "Tijden zijn aangepast";
+            }
         }
-        $_SESSION['success'] = "Tijden zijn aangepast";
     }
     else{
         $_SESSION['error'] = "je hebt geen geldige nummer ingevuld";
