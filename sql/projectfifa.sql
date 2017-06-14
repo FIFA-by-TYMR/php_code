@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2017 at 11:16 AM
+-- Generation Time: Jun 14, 2017 at 03:27 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -25,25 +25,80 @@ USE `project_fifa`;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_finals`
+--
+
+CREATE TABLE `tbl_finals` (
+  `id` int(10) NOT NULL,
+  `team_id` int(10) DEFAULT NULL,
+  `position` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_finals`
+--
+
+INSERT INTO `tbl_finals` (`id`, `team_id`, `position`) VALUES
+(1, 1, 'A1'),
+(2, 1, 'A2'),
+(3, 3, 'B1'),
+(4, 1, 'A3'),
+(5, 2, 'A4'),
+(6, 9, 'A5'),
+(7, 7, 'A6'),
+(8, 14, 'A7'),
+(9, 16, 'A8'),
+(10, 4, 'B2'),
+(11, 3, 'B3'),
+(12, 9, 'B4'),
+(13, 3, 'C1'),
+(14, 6, 'C2'),
+(15, 9, 'D1');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_matches`
 --
 
 CREATE TABLE `tbl_matches` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `ID` int(10) UNSIGNED NOT NULL,
   `team_id_a` int(10) UNSIGNED NOT NULL,
   `team_id_b` int(10) UNSIGNED NOT NULL,
   `score_team_a` int(10) UNSIGNED DEFAULT NULL,
   `score_team_b` int(10) UNSIGNED DEFAULT NULL,
-  `start_time` datetime NOT NULL
+  `start_time` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 --
 -- Dumping data for table `tbl_matches`
 --
 
-INSERT INTO `tbl_matches` (`id`, `team_id_a`, `team_id_b`, `score_team_a`, `score_team_b`, `start_time`) VALUES
-(1, 1, 2, 2, 4, '2017-04-13 18:00:00'),
-(2, 2, 1, NULL, NULL, '2017-05-04 00:00:00');
+INSERT INTO `tbl_matches` (`ID`, `team_id_a`, `team_id_b`, `score_team_a`, `score_team_b`, `start_time`) VALUES
+(51, 1, 2, 3, 2, '2017-06-30 08:00:00'),
+(52, 1, 3, NULL, NULL, '2017-06-30 08:45:00'),
+(53, 1, 4, NULL, NULL, '2017-06-30 09:30:00'),
+(54, 2, 3, NULL, NULL, '2017-06-30 10:15:00'),
+(55, 2, 4, NULL, NULL, '2017-06-30 11:00:00'),
+(56, 3, 4, NULL, NULL, '2017-06-30 11:45:00'),
+(57, 5, 6, NULL, NULL, '2017-06-30 12:30:00'),
+(58, 5, 7, NULL, NULL, '2017-06-30 13:15:00'),
+(59, 5, 8, NULL, NULL, '2017-06-30 14:00:00'),
+(60, 6, 7, NULL, NULL, '2017-06-30 14:45:00'),
+(61, 6, 8, NULL, NULL, '2017-06-30 15:30:00'),
+(62, 7, 8, NULL, NULL, '2017-06-30 16:15:00'),
+(63, 9, 10, NULL, NULL, '2017-06-30 17:00:00'),
+(64, 9, 11, NULL, NULL, '2017-06-30 17:45:00'),
+(65, 9, 12, NULL, NULL, '2017-06-30 18:30:00'),
+(66, 10, 11, NULL, NULL, '2017-06-30 19:15:00'),
+(67, 10, 12, NULL, NULL, '2017-06-30 20:00:00'),
+(68, 11, 12, NULL, NULL, '2017-06-30 20:45:00'),
+(69, 13, 14, NULL, NULL, '2017-06-30 21:30:00'),
+(70, 13, 15, NULL, NULL, '2017-06-30 22:15:00'),
+(71, 13, 16, NULL, NULL, '2017-06-30 23:00:00'),
+(72, 14, 15, NULL, NULL, '2017-06-30 23:45:00'),
+(73, 14, 16, NULL, NULL, '2017-07-01 00:30:00'),
+(74, 15, 16, NULL, NULL, '2017-07-01 01:15:00');
 
 -- --------------------------------------------------------
 
@@ -60,35 +115,6 @@ CREATE TABLE `tbl_players` (
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbl_players`
---
-
-INSERT INTO `tbl_players` (`id`, `student_id`, `team_id`, `first_name`, `last_name`, `created_at`, `deleted_at`) VALUES
-(1, 'd123456', 1, 'Lasse', 'Schöne', '2017-04-13 09:44:13', NULL),
-(2, 'd5435435', 1, 'Davy ', 'Klaassen', '2017-04-13 09:44:13', NULL),
-(3, 'd545454', 1, 'Hakim ', 'Ziyech', '2017-04-13 09:45:47', NULL),
-(4, 'd666555', 1, 'Kasper', 'Dolberg', '2017-04-13 09:45:47', NULL),
-(5, 'd74745', 2, 'Luuk', 'de Jong', '2017-04-13 09:48:23', NULL),
-(6, 'd987665', 2, 'Siem', 'de Jong', '2017-04-13 09:48:23', NULL),
-(7, 'd11555', 2, 'Jeroen', 'Zoet', '2017-04-13 09:48:23', NULL),
-(8, 'd544566', 2, 'Hector', 'Moreno', '2017-04-13 09:48:23', NULL),
-(24, 'Tomasz', 1, 'Tomasz', 'Tomasz', '2017-05-09 16:32:20', NULL),
-(25, 'Tomasz', 1, 'Tomasz', 'Tomasz', '2017-05-09 16:32:20', NULL),
-(26, 'Tomasz', 1, 'Tomasz', 'Tomasz', '2017-05-09 16:32:20', NULL),
-(27, 'Tomasz', 1, 'Tomasz', 'Tomasz', '2017-05-09 16:32:20', NULL),
-(28, 'Tomasz', 1, 'Tomasz', 'Tomasz', '2017-05-09 16:32:20', NULL),
-(29, 'dwadwa', 1, 'dawdaw', 'dawd', '2017-05-09 16:32:55', NULL),
-(30, 'wadwadwa', 1, 'dawd', 'wadaw', '2017-05-09 16:32:55', NULL),
-(31, 'awdaw', 1, 'dawd', 'dwadaw', '2017-05-09 16:32:55', NULL),
-(32, 'dawd', 1, 'awdaw', 'daw', '2017-05-09 16:32:55', NULL),
-(33, 'wadwad', 1, 'dawdwad', 'daw', '2017-05-09 16:32:55', NULL),
-(34, 'Tomasztttt', 39, 'Tomasztttt', 'Tomasztttt', '2017-05-09 16:45:25', NULL),
-(35, '', 39, '', '', '2017-05-09 16:45:25', NULL),
-(36, '', 39, '', '', '2017-05-09 16:45:25', NULL),
-(37, '', 39, '', '', '2017-05-09 16:45:25', NULL),
-(38, '', 39, '', '', '2017-05-09 16:45:25', NULL);
 
 -- --------------------------------------------------------
 
@@ -122,20 +148,22 @@ CREATE TABLE `tbl_teams` (
 --
 
 INSERT INTO `tbl_teams` (`id`, `poule_id`, `name`, `created_at`, `deleted_at`) VALUES
-(1, 1, 'Ajax', '2017-04-13 09:42:45', NULL),
-(2, 1, 'PSV', '2017-04-13 09:42:45', NULL),
-(23, 1, 'Tomasz', '2017-05-09 16:32:20', NULL),
-(24, 1, 'Tomaszs', '2017-05-09 16:32:55', NULL),
-(25, 1, 'dwadwad', '2017-05-09 16:34:35', NULL),
-(27, 1, 'dawdwadwadwadawd', '2017-05-09 16:35:00', NULL),
-(29, 1, 'dawdawdaw', '2017-05-09 16:36:14', NULL),
-(31, 1, 'Tomaszawdwa', '2017-05-09 16:38:01', NULL),
-(32, 1, 'Tomaszawdwadwa', '2017-05-09 16:39:12', NULL),
-(34, 1, 'dawdawdawd', '2017-05-09 16:39:48', NULL),
-(35, 1, 'dwadwadwadwadawdwa', '2017-05-09 16:40:16', NULL),
-(36, 1, 'TomaszT', '2017-05-09 16:40:50', NULL),
-(37, 1, 'Tomasztt', '2017-05-09 16:44:04', NULL),
-(39, 1, 'Tomasztttt', '2017-05-09 16:45:25', NULL);
+(1, 1, 'PSV', '2017-06-07 13:45:07', NULL),
+(2, 1, 'Ajax', '2017-06-07 13:45:19', NULL),
+(3, 1, 'NAC Breda', '2017-06-07 13:45:41', NULL),
+(4, 1, 'AZ', '2017-06-07 13:47:15', NULL),
+(5, 2, 'FC Twente', '2017-06-07 13:47:15', NULL),
+(6, 2, 'FC Utrecht', '2017-06-07 13:47:15', NULL),
+(7, 2, 'Feyenoord', '2017-06-07 13:47:15', NULL),
+(8, 2, 'NEC', '2017-06-07 13:47:15', NULL),
+(9, 3, 'Roda JC', '2017-06-07 13:48:16', NULL),
+(10, 3, 'SC Heerenveen', '2017-06-07 13:48:16', NULL),
+(11, 3, 'Sparta', '2017-06-07 13:48:16', NULL),
+(12, 3, 'Vitesse', '2017-06-07 13:48:16', NULL),
+(13, 4, 'Willem II', '2017-06-07 13:49:09', NULL),
+(14, 4, 'PEC Zwolle', '2017-06-07 13:49:09', NULL),
+(15, 4, 'Heracles Almelo', '2017-06-07 13:49:09', NULL),
+(16, 4, 'FC Groningen', '2017-06-07 13:49:09', NULL);
 
 -- --------------------------------------------------------
 
@@ -155,17 +183,24 @@ CREATE TABLE `tbl_users` (
 --
 
 INSERT INTO `tbl_users` (`id`, `email`, `pass`, `admin`) VALUES
-(1, 'admin@admin.com', '$2y$10$p4R9ZIIE5QtnzMTbpkbhM.ashfncHmAM9yGfTl.NpOUXgsBeTs1iS', NULL);
+(1, 'admin@admin.com', '$2y$10$p4R9ZIIE5QtnzMTbpkbhM.ashfncHmAM9yGfTl.NpOUXgsBeTs1iS', NULL),
+(2, 'eb89@rocwb.nl', '$2y$10$Z0W5MFKnmhZ7h4j6X7eEcOdGB2uWKw8yMHeBuN5WlNFOZV7SwNS7S', NULL);
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `tbl_finals`
+--
+ALTER TABLE `tbl_finals`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_matches`
 --
 ALTER TABLE `tbl_matches`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`ID`),
   ADD KEY `tbl_matches_ibfk_1` (`team_id_a`),
   ADD KEY `tbl_matches_ibfk_2` (`team_id_b`);
 
@@ -202,15 +237,20 @@ ALTER TABLE `tbl_users`
 --
 
 --
+-- AUTO_INCREMENT for table `tbl_finals`
+--
+ALTER TABLE `tbl_finals`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+--
 -- AUTO_INCREMENT for table `tbl_matches`
 --
 ALTER TABLE `tbl_matches`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 --
 -- AUTO_INCREMENT for table `tbl_players`
 --
 ALTER TABLE `tbl_players`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tbl_poules`
 --
@@ -220,12 +260,12 @@ ALTER TABLE `tbl_poules`
 -- AUTO_INCREMENT for table `tbl_teams`
 --
 ALTER TABLE `tbl_teams`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Constraints for dumped tables
 --
