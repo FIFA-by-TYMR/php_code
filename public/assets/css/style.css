@@ -10,6 +10,18 @@ body{
     min-height: 85vh;
 }
 
+input {
+    color: #000;
+}
+
+select {
+    color: #000;
+}
+
+select > option {
+    color: #000;
+}
+
 /*===============================nav============================*/
 header img{
     width: 100px;
@@ -118,3 +130,6 @@ footer {
         text-align: center
     }
 }
+
+
+

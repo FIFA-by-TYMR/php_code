@@ -5,7 +5,7 @@ require "poulePoints.php";
 
 for ($poule_id = 0; $poule_id <= 4; $poule_id++)
 {
-    $stmt = $db_conn->prepare("SELECT * FROM tbl_teams WHERE `poule_id` = $poule_id");
+    $stmt = $db_conn->prepare("SELECT * FROM tbl_teams WHERE `poule_id` = 1");
     $stmt->execute();
     $teams = $stmt->fetchAll();
 
@@ -41,6 +41,5 @@ for ($poule_id = 0; $poule_id <= 4; $poule_id++)
             </table>
         </div>';
     }
-
-
 }
+
