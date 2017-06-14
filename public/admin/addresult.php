@@ -322,7 +322,7 @@
                 </div>
 
             </form>
-            <form action="../../app/deleteFinales" method="post" class="col-md-12">
+            <form action="../../app/deleteFinales.php" method="post" class="col-md-12">
                 <input type="submit" value="Finales resetten" class="btn btn-danger col-md-6 col-md-offset-3 reset_final">
             </form>
         </div>
