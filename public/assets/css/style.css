@@ -1,6 +1,7 @@
 body{
     background-image: url("../img/bg4.png");
     background-size: cover;
+    background-position: center;
     color: #FFF;
     font-family: 'Arvo', serif;
 }
@@ -122,6 +123,9 @@ footer {
 }
 .addresult input {
     color: #000;
+}
+.reset_final{
+    margin-top: 50px;
 }
 /*===============================Media Query============================*/
 @media (max-width: 768px){

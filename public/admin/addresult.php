@@ -5,19 +5,20 @@
 
     <div class="main-content">
         <div class="container wrapper">
+            <?php
+            if(isset($_SESSION['error']))
+            {
+                echo '<div class="text-center alert-danger">' . $_SESSION['error'] . '</div>';
+                unset($_SESSION['error']);
+            }
+            if(isset($_SESSION['success']))
+            {
+                echo '<div class="text-center alert-success">' . $_SESSION['success'] . '</div>';
+                unset($_SESSION['success']);
+            }
+            ?>
+            <h2 class="col-md-12 text-center">Match Rezultaten</h2>
             <div class="col-md-8 col-md-offset-2">
-                <?php
-                if(isset($_SESSION['error']))
-                {
-                    echo '<div class="text-center alert-danger">' . $_SESSION['error'] . '</div>';
-                    unset($_SESSION['error']);
-                }
-                if(isset($_SESSION['success']))
-                {
-                    echo '<div class="text-center alert-success">' . $_SESSION['success'] . '</div>';
-                    unset($_SESSION['success']);
-                }
-                ?>
                 <form action="../../app/matchSelect.php" method="post" class="addresult">
                     <div class="form-group col-md-10">
                         <select name="match" id="Match" class="form-control match_select">
@@ -42,6 +43,7 @@
                     echo "";
                 }
             ?>
+            <h2 class="col-md-12 text-center">Play Off Rezultaten</h2>
             <form action="../../app/saveFinales.php" method="post" class="col-md-12">
                 <div class= "play-off">
                         <ul class="round round-2">
@@ -320,8 +322,8 @@
                 </div>
 
             </form>
-            <form action="deleteFinales" method="post" class="col-md-12">
-                <input type="submit" value="Finales verwijderen" class="btn btn-danger col-md-6 col-md-offset-3">
+            <form action="../../app/deleteFinales" method="post" class="col-md-12">
+                <input type="submit" value="Finales resetten" class="btn btn-danger col-md-6 col-md-offset-3 reset_final">
             </form>
         </div>
     </div>
