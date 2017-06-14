@@ -49,15 +49,15 @@ if ($validate->validateTime($first, $pause, $second) == true)
                     //Hoe much time will be add for one match
                     $date->modify('+'.$count.' minutes');
                 }
-                $_SESSION['success'] = "Tijden zijn aangepast";
+                $_SESSION['success'] = "De tijden zijn aangepast!";
             }
         }
     }
     else{
-        $_SESSION['error'] = "je hebt geen geldige nummer ingevuld";
+        $_SESSION['error'] = "je hebt geen geldige nummer ingevuld!";
     }
 }
 else{
-    $_SESSION['error'] = "Je hebt geen geldige tijd ingevoerd. Tijd mag geen - bevaten ";
+    $_SESSION['error'] = "Je hebt geen geldige tijd ingevoerd. Het mag geen - bevaten!";
 }
 header("location: ../public/admin/admindex.php");

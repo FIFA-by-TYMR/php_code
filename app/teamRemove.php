@@ -14,11 +14,11 @@ if ($result == 1){
     $stmt = $db_conn->prepare("UPDATE tbl_teams SET `deleted_at` = now() WHERE `name` = :naam");
     $stmt->execute(array("naam" => $selectie));
 
-    $_SESSION['success'] = "Team verwijderd";
+    $_SESSION['success'] = "Team verwijderd!";
 }
 else
 {
-    $_SESSION['error'] = "Door jouw gekozen team bestaat niet";
+    $_SESSION['error'] = "De gekozen team bestaat niet!";
 }
 
 header("location: ../public/admin/admindex.php");

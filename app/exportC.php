@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: Danma
- * Date: 5/16/2017
- * Time: 4:10 PM
- */
 class exportC
 {
     public $query;

@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($rezult >= 16)
     {
-        $_SESSION['error'] = "Je hebt maximale aantal teams bereikt";
+        $_SESSION['error'] = "Je hebt de maximale aantal teams bereikt!";
     }
     else {
 
@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     $stmt->execute(array("student_id" => $rplayer[0], "team_id" => $teamname[0], "first_name" => $rplayer[1], "last_name" => $rplayer[2]));
                                 }
                             }
-                            $_SESSION['success'] = "Team Toegevoegd";
+                            $_SESSION['success'] = "Team Toegevoegd!";
                             break;
                         }
                     }
@@ -85,15 +85,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $id++;
                     }
                     if ($id == 4){
-                        $_SESSION['error'] = "Je hebt maximale teams per poule bereikt .";
+                        $_SESSION['error'] = "Je hebt het maximale teams per poule bereikt!";
                     }
                 }
             } else {
-                $_SESSION['error'] = "Deze team bestaat al.";
+                $_SESSION['error'] = "Deze team bestaat al!";
             }
         }
         else{
-            $_SESSION['error'] = "Je hebt geen geldige teamnaam ingevoerd.";
+            $_SESSION['error'] = "Je hebt geen geldige teamnaam ingevoerd!";
         }
     }
     header("location: ../public/admin/addteam.php");

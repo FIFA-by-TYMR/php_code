@@ -25,20 +25,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (password_verify($pass, $userAll['pass']))
             {
                 $_SESSION['email'] = $email;
-                $_SESSION['logedIn'] = "Je bent ingelogd als: " . $email;
+                $_SESSION['logedIn'] = "Je bent ingelogd als: " . $email. "!";
                 header("location: ../public/admin/admindex.php");
                 exit;
             }
             else
             {
-                $_SESSION['error'] = "Je hebt verkeerde email of wachtwoord ingetoetst";
+                $_SESSION['error'] = "Je hebt een verkeerde email of wachtwoord ingetoetst!";
             }
         }
         if ($stmt->rowCount() == 0) {
-            $_SESSION['error'] = "Je hebt verkeerde email of wachtwoord ingetoetst";
+            $_SESSION['error'] = "Je hebt een verkeerde email of wachtwoord ingetoetst!";
         }
     } else {
-        $_SESSION['error'] = "Je hebt ongeldige email ingetoets";
+        $_SESSION['error'] = "Je hebt een ongeldige email ingetoets!";
     }
     header("location: ../public/login.php");
 }

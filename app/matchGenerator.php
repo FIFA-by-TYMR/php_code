@@ -29,10 +29,10 @@ for ($poules = 1; $poules <= 4; $poules++){
                 {
                     $stmt = $db_conn->prepare("INSERT INTO tbl_matches (`team_id_a`, `team_id_b`) VALUES (:team_a, :team_b)");
                     $stmt->execute(array("team_a" => $arr_teams_id[$i], "team_b" => $arr_teams_id[$c]));
-                    $_SESSION['success'] = "Metches zijn gegenereerd";
+                    $_SESSION['success'] = "Wedstrijden zijn gegenereerd!";
                 }
                 else{
-                    $_SESSION['error'] = "Je hebt all matches gegenereerd";
+                    $_SESSION['error'] = "Je hebt al alle wedstrijden gegenereerd!";
                 }
             }
         }

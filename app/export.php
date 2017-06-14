@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Max
- * Date: 5/15/2017
- * Time: 3:22 PM
- */
+
 require "connection.php";
 require "exportC.php";
 

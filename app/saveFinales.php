@@ -7,6 +7,6 @@ foreach ($_POST as $key => $place)
     $stmt->execute(array("id" => $place, "position" => $key));
 }
 
-$_SESSION['success'] = "Play off's opgeslagen";
+$_SESSION['success'] = "Play off's opgeslagen!";
 
 header("location: ../public/admin/addresult.php");
