@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 }
 
                 for ($id = 1; $id <= 4;){
-                    $stmt = $db_conn->prepare("SELECT `poule_id` FROM tbl_teams WHERE `poule_id` = :id");
+                    $stmt = $db_conn->prepare("SELECT `poule_id` FROM tbl_teams WHERE `poule_id` = :id AND `deleted_at` IS NULL");
                     $stmt->execute(array("id" => $id));
                     $id_count = $stmt->rowCount();
                     if ($id_count != 4)

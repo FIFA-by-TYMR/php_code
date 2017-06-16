@@ -17,7 +17,7 @@
                 unset($_SESSION['success']);
             }
             ?>
-            <h2 class="col-md-12 text-center">Match Rezultaten</h2>
+            <h2 class="col-md-12 text-center">Match resultaten</h2>
             <div class="col-md-8 col-md-offset-2">
                 <form action="../../app/matchSelect.php" method="post" class="addresult">
                     <div class="form-group col-md-10">
@@ -43,7 +43,7 @@
                     echo "";
                 }
             ?>
-            <h2 class="col-md-12 text-center">Play Off Rezultaten</h2>
+            <h2 class="col-md-12 text-center">Play off resultaten</h2>
             <form action="../../app/saveFinales.php" method="post" class="col-md-12">
                 <div class= "play-off">
                         <ul class="round round-2">
