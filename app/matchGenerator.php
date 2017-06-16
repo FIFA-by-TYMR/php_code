@@ -3,7 +3,7 @@ session_start();
 require "connection.php";
 
 for ($poules = 1; $poules <= 4; $poules++){
-    $stmt = $db_conn->prepare("SELECT * FROM tbl_teams WHERE `poule_id` =$poules");
+    $stmt = $db_conn->prepare("SELECT * FROM tbl_teams WHERE `poule_id` =$poules AND `deleted_at` IS NULL");
     $stmt->execute();
     $teams = $stmt->fetchAll();
 
@@ -14,7 +14,7 @@ for ($poules = 1; $poules <= 4; $poules++){
         array_push($arr_teams_id, $team['id']);
     }
 
-    $stmt = $db_conn->prepare("SELECT * FROM tbl_teams WHERE `poule_id` =$poules");
+    $stmt = $db_conn->prepare("SELECT * FROM tbl_teams WHERE `poule_id` =$poules AND `deleted_at` IS NULL");
     $stmt->execute();
     $teams = $stmt->fetchAll();
 

@@ -5,7 +5,7 @@ require "poulePoints.php";
 
 for ($poule_id = 0; $poule_id <= 4; $poule_id++)
 {
-    $stmt = $db_conn->prepare("SELECT * FROM tbl_teams WHERE `poule_id` = 1");
+    $stmt = $db_conn->prepare("SELECT * FROM tbl_teams WHERE `poule_id` = $poule_id AND `deleted_at` IS NULL");
     $stmt->execute();
     $teams = $stmt->fetchAll();
 
